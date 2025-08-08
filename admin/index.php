@@ -19,4 +19,5 @@ $act = $_GET['act'] ?? '/';
 
 match ($act) {
      'danh-muc' => (new AdminDanhMucController())->danhSachDanhMuc(),
+     default => null,
 };
