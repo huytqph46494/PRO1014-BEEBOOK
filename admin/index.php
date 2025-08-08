@@ -19,5 +19,10 @@ $act = $_GET['act'] ?? '/';
 
 match ($act) {
      'danh-muc' => (new AdminDanhMucController())->danhSachDanhMuc(),
-     default => null,
+      'form-them-danh-muc' => (new AdminDanhMucController())->formAddDanhmuc(),
+        'them-danh-muc' => (new AdminDanhMucController())->postAddDanhmuc(),
+         'form-sua-danh-muc' => (new AdminDanhMucController())->formEditDanhmuc(),
+        'sua-danh-muc' => (new AdminDanhMucController())->postEditDanhmuc(),
+         'xoa-danh-muc' => (new AdminDanhMucController())->deleteDanhMuc(),
+
 };

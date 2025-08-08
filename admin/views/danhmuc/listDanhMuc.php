@@ -29,7 +29,9 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">DataTable with default features</h3>
+                            <a href="<?= BASE_ADMIN_URL . '?act=form-them-danh-muc' ?>">
+                                <button class="btn btn-success">Thêm danh mục</button>
+                            </a>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -48,9 +50,16 @@
                                         <td><?= $key+1?></td>
                                         <td><?=$danhMuc['ten_danh_muc']?></td>
                                         <td><?=$danhMuc['mo_ta']?></td>
+                        
                                         <td>
-                                            <button class="btn btn-warning">Sửa</button>
-                                            <button class="btn btn-danger">Xóa</button>
+                                            <a href="<?= BASE_ADMIN_URL . '?act=form-sua-danh-muc&id_danh_muc=' . $danhMuc['id'] ?>">
+                                                 <button class="btn btn-warning">Sửa</button>
+                                            </a>
+                                           <a href="<?= BASE_ADMIN_URL . '?act=xoa-danh-muc&id_danh_muc=' . $danhMuc['id'] ?>" 
+                                           onclick="return con  firm('bạn có đồng ý xóa không')" >
+                                             <button class="btn btn-danger">Xóa</button>
+                                           </a>
+                                           
                                         </td>
                                     </tr>
                                     <?php endforeach ?>
