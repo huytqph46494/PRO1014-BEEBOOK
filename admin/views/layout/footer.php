@@ -1,8 +1,8 @@
 <footer class="main-footer">
     <div class="float-right d-none d-sm-block">
-        <b>Nhóm</b>
+        <b>BeeBook</b>
     </div>
-    <strong>Website bán sách nhóm</strong>
+    <strong>Website bán sách BeeBook</strong>
 </footer>
 
 <!-- Control Sidebar -->

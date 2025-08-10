@@ -43,4 +43,29 @@ function deleteFile($file){
         unlink($pathDelete);
     }
 }
+
+// xóa session sau khi load trang
+
+function deleteSessionError() {
+    if (isset($_SESSION['flash'])) {
+        //hủy sesion sau khi tải trang
+        unset($_SESSION['flash']);
+        session_unset();
+        session_destroy();
+    }
+}
+
+//Upload file album
+function uploadFileAlbum($file, $folderUpload, $key) {
+    $pathStorage = $folderUpload . time() . $file['name'] [$key];
+
+    $from = $file['tmp_name'][$key];
+    $to = PATH_ROOT . $pathStorage;
+
+    if (move_uploaded_file($from, $to)) {
+        return $pathStorage;
+    }
+
+    return null;
+}
 //Debug

@@ -54,25 +54,27 @@
                                         <td><?= $key + 1 ?></td>
                                         <td><?=$sanPham['ten_san_pham']?></td>
                                         <td>
-                                            <img src="<?= BASE_URL . $sanPham['hinh_anh']?>" style="width: 100px" alt="">
-                                           
+                                            <img src="<?= BASE_URL . $sanPham['hinh_anh']?>" style="width: 100px"
+                                                alt="">
+
                                         </td>
 
                                         <td><?=$sanPham['gia_san_pham']?></td>
                                         <td><?=$sanPham['so_luong']?></td>
                                         <td><?= $sanPham['ten_danh_muc'] ?></td>
                                         <td><?=$sanPham['trang_thai'] == 1 ? 'Còn bán':'Dừng bán';?></td>
-                                        
-                        
+
+
                                         <td>
-                                            <a href="<?= BASE_ADMIN_URL . '?act=form-sua-san-pham&id_san_pham=' . $sanPham['id'] ?>">
-                                                 <button class="btn btn-warning">Sửa</button>
+                                            <a
+                                                href="<?= BASE_ADMIN_URL . '?act=form-sua-san-pham&id_san_pham=' . $sanPham['id'] ?>">
+                                                <button class="btn btn-warning">Sửa</button>
                                             </a>
-                                           <a href="<?= BASE_ADMIN_URL . '?act=xoa-san-pham&id_san_pham=' . $sanPham['id'] ?>" 
-                                           onclick="return con  firm('bạn có đồng ý xóa không')" >
-                                             <button class="btn btn-danger">Xóa</button>
-                                           </a>
-                                           
+                                            <a href="<?= BASE_ADMIN_URL . '?act=xoa-san-pham&id_san_pham=' . $sanPham['id'] ?>"
+                                                onclick="return confirm('bạn có đồng ý xóa không')">
+                                                <button class="btn btn-danger">Xóa</button>
+                                            </a>
+
                                         </td>
                                     </tr>
                                     <?php endforeach ?>
