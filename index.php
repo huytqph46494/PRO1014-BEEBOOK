@@ -1,5 +1,4 @@
 <?php 
-
 // Require file Common
 require_once './commons/env.php'; // Khai báo biến môi trường
 require_once './commons/function.php'; // Hàm hỗ trợ
@@ -23,4 +22,7 @@ match ($act) {
 
     'danh-sach-san-pham' => (new HomeController())->danhSachSanPham(), // Danh sách sản phẩm
     
+    'sua_san_pham' => (new HomeController())->suaSanPham(), // Thêm xử lý sửa
+
+    default => require './views/404.php'
 };
