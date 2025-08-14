@@ -330,4 +330,40 @@ class AdminSanPhamController {
             exit();
         }
     }
+
+    public function deleteSanPham()
+    {
+        $id = $_GET['id_san_pham'];
+        $sanPham = $this->modelSanPham->getDetailSanPham($id);
+
+        $listAnhSanPham = $this->modelSanPham->getListAnhSanPham($id);
+
+        if ($sanPham){
+            deleteFile($sanPham['hinh_anh']);
+            $this->modelSanPham->destroySanPham($id);
+        }
+        if ($listAnhSanPham){
+            foreach($listAnhSanPham as $key=>$anhSP){
+                deleteFile($anhSP['link_hinh_anh']);
+                $this->modelSanPham->destroyAnhSanPham($anhSP['id']);
+            }
+        }
+        header("Location: " . BASE_ADMIN_URL . '?act=san-pham');
+        exit();
+    }
+
+
+    public function detailSanPham() {
+        
+        $id = $_GET['id_san_pham'];
+        $sanPham = $this->modelSanPham->getDetailSanPham($id);
+        $listAnhSanPham = $this->modelSanPham->getListAnhSanPham($id);
+
+        if ($sanPham) {
+            require_once './views/sanpham/detailSanPham.php';
+        } else {
+            header("Location: " . BASE_ADMIN_URL . '?act=san-pham');
+            exit();
+        }
+    }
 }

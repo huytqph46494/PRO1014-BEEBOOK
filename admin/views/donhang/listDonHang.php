@@ -14,7 +14,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Quản lý danh sách sách</h1>
+                    <h1>Quản lý danh sách sách đơn hàng</h1>
                 </div>
 
             </div>
@@ -29,9 +29,6 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <a href="<?= BASE_ADMIN_URL . '?act=form-them-san-pham' ?>">
-                                <button class="btn btn-success">Thêm sách mới</button>
-                            </a>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -39,36 +36,33 @@
                                 <thead>
                                     <tr>
                                         <th>STT</th>
-                                        <th>Tên sản phẩm</th>
-                                        <th>Ảnh sản phẩm</th>
-                                        <th>Giá tiền</th>
-                                        <th>Số lượng</th>
-                                        <th>Danh mục</th>
+                                        <th>Mã Đơn Hàng</th>
+                                        <th>Tên người nhận</th>
+                                        <th>Số điện thoại</th>
+                                        <th>Ngày đặt</th>
+                                        <th>Tổng tiền</th>
                                         <th>Trạng thái</th>
                                         <th>Thao tác</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach($listSanPham as $key => $sanPham): ?>
+                                    <?php foreach($listDonHang as $key => $donHang): ?>
                                     <tr>
                                         <td><?= $key + 1 ?></td>
-                                        <td><?=$sanPham['ten_san_pham']?></td>
-                                        <td>
-                                            <img src="<?= BASE_URL . $sanPham['hinh_anh']?>" style="width: 100px"
-                                                alt="">
-
-                                        </td>
-
-                                        <td><?=$sanPham['gia_san_pham']?></td>
-                                        <td><?=$sanPham['so_luong']?></td>
-                                        <td><?= $sanPham['ten_danh_muc'] ?></td>
-                                        <td><?=$sanPham['trang_thai'] == 1 ? 'Còn bán':'Dừng bán';?></td>
+                                        <td><?=$donHang['ma_don_hang']?></td>
+                                        <td><?=$donHang['ten_nguoi_nhan']?></td>
+                                        <td><?=$donHang['sdt_nguoi_nhan']?></td>
+                                        <td><?=$donHang['ngay_dat']?></td>
+                                        <td><?=$donHang['tong_tien']?></td>
+                                        <td><?=$donHang['ten_trang_thai']?></td>
+                                        <td><span class="badge text-bg-<?= $donHang['ten_trang_thai']?>"><?= $donHang['ten_trang_thai']?></span></td>
+                                        
 
 
                                         <td>
                                             <div class="btn-group"></div>
                                             <a
-                                                href="<?= BASE_ADMIN_URL . '?act=chi-tiet-san-pham&id_san_pham=' . $sanPham['id'] ?>">
+                                                href="<?= BASE_ADMIN_URL . '?act=chi-tiet-don-hang&id_san_pham=' . $sanPham['id'] ?>">
                                                 <button class="btn btn-primary"><i class="fas fa-eye"></i></button>
                                             </a>
 
@@ -76,11 +70,7 @@
                                                 href="<?= BASE_ADMIN_URL . '?act=form-sua-san-pham&id_san_pham=' . $sanPham['id'] ?>">
                                                 <button class="btn btn-warning"><i class="fas fa-wrench"></i></button>
                                             </a>
-                                            <a href="<?= BASE_ADMIN_URL . '?act=xoa-san-pham&id_san_pham=' . $sanPham['id'] ?>"
-                                                onclick="return confirm('bạn có đồng ý xóa không')">
-                                                <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
-                                            </a>
-
+                                        
                                         </td>
                                         </div>
                                     </tr>
@@ -90,11 +80,11 @@
 
                                     <tr>
                                         <th>STT</th>
-                                        <th>Tên sản phẩm</th>
-                                        <th>Ảnh sản phẩm</th>
-                                        <th>Giá tiền</th>
-                                        <th>Số lượng</th>
-                                        <th>Danh mục</th>
+                                        <th>Mã Đơn Hàng</th>
+                                        <th>Tên người nhận</th>
+                                        <th>Số điện thoại</th>
+                                        <th>Ngày đặt</th>
+                                        <th>Tổng tiền</th>
                                         <th>Trạng thái</th>
                                         <th>Thao tác</th>
                                     </tr>

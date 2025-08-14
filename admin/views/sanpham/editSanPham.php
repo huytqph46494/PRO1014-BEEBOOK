@@ -13,9 +13,11 @@
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
-                <div class="col-sm-6">
+                <div class="col-sm-11">
                     <h1>Sửa thông tin sản phẩm: <?=$sanPham['ten_san_pham']?></h1>
                 </div>
+                <div class="col-sm-1">
+                    <a href="<?= BASE_ADMIN_URL . '?act=san-pham'?>" class="btn btn-secondary">Quay lại</a>
             </div>
         </div><!-- /.container-fluid -->
     </section>
