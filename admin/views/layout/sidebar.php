@@ -14,14 +14,10 @@
                 <img src="./assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-<<<<<<< HEAD
                 <a href="#" class="d-block">Nhóm 1 - BEEBOOK</a>
-=======
                 <a href="#" class="d-block">BEE-BOOK</a>
->>>>>>> 65c5743b084931235540b379b94a7d44529e9a6b
             </div>
         </div>
-
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">

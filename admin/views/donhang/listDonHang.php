@@ -58,16 +58,15 @@
                                         <td><span class="badge text-bg-<?= $donHang['ten_trang_thai']?>"><?= $donHang['ten_trang_thai']?></span></td>
                                         
 
-
                                         <td>
                                             <div class="btn-group"></div>
                                             <a
-                                                href="<?= BASE_ADMIN_URL . '?act=chi-tiet-don-hang&id_san_pham=' . $sanPham['id'] ?>">
+                                                href="<?= BASE_ADMIN_URL . '?act=chi-tiet-don-hang&id_don_hang=' . $donHang['id'] ?>">
                                                 <button class="btn btn-primary"><i class="fas fa-eye"></i></button>
                                             </a>
 
                                             <a
-                                                href="<?= BASE_ADMIN_URL . '?act=form-sua-san-pham&id_san_pham=' . $sanPham['id'] ?>">
+                                                href="<?= BASE_ADMIN_URL . '?act=form-sua-don-hang&id_don_hang=' . $donHang['id'] ?>">
                                                 <button class="btn btn-warning"><i class="fas fa-wrench"></i></button>
                                             </a>
                                         
