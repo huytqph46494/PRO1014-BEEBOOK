@@ -35,8 +35,6 @@ match ($act) {
      'xoa-danh-muc' => (new AdminDanhMucController())->deleteDanhMuc(),
 
      //route sản phẩm
-
-
      'san-pham' => (new AdminSanPhamController())->danhSachSanPham(),
      'form-them-san-pham' => (new AdminSanPhamController())->formAddSanPham(),
      'them-san-pham' => (new AdminSanPhamController())->postAddSanPham(),
@@ -45,6 +43,9 @@ match ($act) {
      'sua-album-anh-san-pham'=> (new AdminSanPhamController())->postEditAnhSanPham(),
      'xoa-san-pham' => (new AdminSanPhamController())->deleteSanPham(),
      'chi-tiet-san-pham' => (new AdminSanPhamController())->detailSanPham(),
+
+      //router bình luận
+      'update-trang-thai-binh-luan' =>(new AdminSanPhamController())->updateTrangThaiBinhLuan(),
 
      //route quản lý đơn hàng
      'don-hang' => (new AdminDonHangController())->danhSachDonHang(),

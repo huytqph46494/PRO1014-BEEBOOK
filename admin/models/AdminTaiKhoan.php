@@ -97,10 +97,8 @@ class AdminTaiKhoan{
     }
 
 
-
      public function updateKhachHang($id, $ho_ten, $email, $so_dien_thoai, $ngay_sinh,  $gioi_tinh, $dia_chi, $trang_thai){
     try {
-        // var_dump($id);die;
         $sql = 'UPDATE tai_khoans
         SET
             ho_ten = :ho_ten,

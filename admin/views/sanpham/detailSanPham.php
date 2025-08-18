@@ -54,78 +54,53 @@
 
             </div>
           </div>
-          <!-- <div class="row mt-4">
-            <nav class="w-100">
-              <div class="nav nav-tabs" id="product-tab" role="tablist">
-                <a class="nav-item nav-link active" id="product-desc-tab" data-toggle="tab" href="#binh-luan" role="tab" aria-controls="product-desc" aria-selected="true">Bình luận và sản phẩm</a>
-               
-              </div>
-            </nav>
-            <div class="tab-content p-3" id="nav-tabContent">
-              <div class="tab-pane fade show active" id="#binh-luan" role="tabpanel" aria-labelledby="product-desc-tab"> 
-                <div class="container-fluid">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Tên người bình luận</th>
-                            <th>Nội dung</th>
-                            <th>Ngày đăng</th>
-                            <th>Thao tác</th>
-                        </tr>
-                    </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Nguyễn Đức Anh</td>
-                        <td>truyện đọc rất hay, hình ảnh nét</td>
-                        <td>14/8/2025</td>
-                        <td>
-                            <div class="btn-group">
-                                <a href="#"><button class="btn btn-warning">Ẩn</button></a>
-                                <a href="#"><button class="btn btn-danger">Xóa</button></a>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div> -->
-        <ul class="nav nav-tabs row mt-4" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
-         <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Bình luận sản phẩm</button>
-        </li>
-        </ul>
-        <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-            <table class="table table-striped table-hover">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Tên người bình luận</th>
-                            <th>Nội dung</th>
-                            <th>Ngày đăng</th>
-                            <th>Thao tác</th>
-                        </tr>
-                    </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Nguyễn Đức Anh</td>
-                        <td>truyện đọc rất hay, hình ảnh nét</td>
-                        <td>14/8/2025</td>
-                        <td>
-                            <div class="btn-group">
-                                <a href="#"><button class="btn btn-warning">Ẩn</button></a>
-                                <a href="#"><button class="btn btn-danger">Xóa</button></a>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-              </table>
-        </div>
+
+           <div class="col-12">
+                    <hr>
+                    <h2>Bình luận của sản phẩm</h2>
+                    <div>
+                         <table id="example1" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>STT</th>
+                                       <th>Người bình luận</th>
+                                       <th>Nội dung</th>
+                                       <th>Ngày bình luận</th>
+                                        <th>Trạng thái</th>
+                                        <th>Thao tác</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                              
+                                    <?php foreach($listBinhLuan as $key => $binhLuan): ?>
+                                    <tr>
+                                        <td><?= $key + 1 ?></td>
+                                       <td>
+                                            <a target="_bank" href="<?= BASE_ADMIN_URL. '?act=chi-tiet-khach-hang&id_khach_hang=' . $binhLuan['tai_khoan_id'];?>"><?=$binhLuan['ho_ten']?>
+                                    </a>
+                                </td>
+                                        <td><?=$binhLuan['noi_dung']?></td>
+                                        <td><?=$binhLuan['ngay_dang']?></td>
+                                        <td><?=$binhLuan['trang_thai'] == 1 ? 'Hiển thị' :'Ẩn' ?></td>
+                                        <td>
+                                        <form action="<?= BASE_ADMIN_URL . '?act=update-trang-thai-binh-luan'?>" method="POST">
+                                            <input type="hidden" name="id_binh_luan" value="<?= $binhLuan['id'] ?>">
+                                             <input type="hidden" name="name_view" value="detail_khach">
+                                              <input type="hidden" name="id_khach_hang" value="<?= $binhLuan['tai_khoan_id'] ?>">
+                                            <button type="submit" onclick="return confirm('Bạn có muốn ẩn bình luận không')" class="btn btn-warning">
+                                                <?= $binhLuan['trang_thai'] == 1 ? 'Ẩn':'Bỏ ẩn' ?>
+                                            </button>
+                                        </form>
+                                          </td>
+                                    </tr>
+                                    <?php endforeach ?>
+                                </tbody>
+                            </table>
+                    </div>
+                </div>
+            
         
+        </div>
         <!-- /.card-body -->
       </div>
       <!-- /.card -->
