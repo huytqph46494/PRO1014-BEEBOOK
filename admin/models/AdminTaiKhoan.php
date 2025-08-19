@@ -97,10 +97,8 @@ class AdminTaiKhoan{
     }
 
 
-
      public function updateKhachHang($id, $ho_ten, $email, $so_dien_thoai, $ngay_sinh,  $gioi_tinh, $dia_chi, $trang_thai){
     try {
-        // var_dump($id);die;
         $sql = 'UPDATE tai_khoans
         SET
             ho_ten = :ho_ten,
@@ -128,6 +126,32 @@ class AdminTaiKhoan{
         ]);
     } catch (Exception $e) {
         echo "Lỗi: " . $e->getMessage();
+    }
+}
+
+    public function checkLogin($email, $mat_khau) {
+    try {
+        $sql = 'SELECT * FROM tai_khoans WHERE email = :email';
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute([':email' => $email]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($user && password_verify($mat_khau, $user['mat_khau'])) {
+            if ($user['chuc_vu_id'] == 1) { // là admin
+                if ($user['trang_thai'] == 1) {
+                    return $user['email']; // đăng nhập thành công, trả về dữ liệu user
+                } else {
+                    return "Tài khoản đã bị cấm";
+                }
+            } else {
+                return "Không phải tài khoản quản trị";
+            }
+        } else {
+            return "Email hoặc mật khẩu không đúng";
+        }
+    } catch (Exception $e) {
+        echo "Lỗi: " . $e->getMessage();
+        return false;
     }
 }
 
