@@ -123,11 +123,19 @@
                 <a href="./assets/index2.html" class="h1"><b>Bee-Book</b></a>
             </div>
             <div class="card-body">
-                <?php if (isset($_SESSION['error'])) { ?>
-                <p class="text-danger login-box-msg"><?= $_SESSION['error'] ?></p>
-                <?php }else{ ?>
                 <p class="login-box-msg">Vui lòng đăng nhập</p>
-                <?php } ?>
+
+                <?php if (isset($_SESSION['error'])): ?>
+                <?php if (is_array($_SESSION['error'])): ?>
+                <?php foreach ($_SESSION['error'] as $err): ?>
+                <p class="text-danger login-box-msg"><?= $err ?></p>
+                <?php endforeach; ?>
+                <?php else: ?>
+                <p class="text-danger login-box-msg"><?= $_SESSION['error'] ?></p>
+                <?php endif; ?>
+                <?php unset($_SESSION['error']); // hiển thị xong thì xóa để reload không hiện lại ?>
+                <?php endif; ?>
+
 
                 <form action="<?= BASE_ADMIN_URL . '?act=check-login-admin'?>" method="post">
                     <div class="input-group mb-3">
