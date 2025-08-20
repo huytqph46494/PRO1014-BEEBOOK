@@ -92,13 +92,17 @@
           <hr>
          
           <h3>Đổi mật khẩu</h3>
-            <?php if(isset($_SESSION['success'])) { ?>
-                      <div class="alert alert-info alert-dismissable">
-                        <a class="panel-close close" data-dismiss="alert">×</a> 
-                        <i class="fa fa-coffee"></i>
-                        <?= $_SESSION['success']; ?>
-        </div>
-           <?php } ?>
+           <?php if(isset($_SESSION['success'])) { ?>
+    <div class="alert alert-info alert-dismissable">
+        <a class="panel-close close" data-dismiss="alert">×</a> 
+        <i class="fa fa-coffee"></i>
+        <?= $_SESSION['success']; ?>
+    </div>
+    <?php unset($_SESSION['success']); ?>
+<?php } ?>
+
+
+
            
           <form action="<?= BASE_ADMIN_URL . '?act=sua-mat-khau-ca-nhan-quan-tri' ?>" method="post">
           <div class="form-group">

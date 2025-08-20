@@ -329,17 +329,18 @@ public function postEditMatKhauCaNhan(){
         if (empty($errors)) {
             $hashPass = password_hash($new_pass, PASSWORD_BCRYPT);
             $status = $this->modelTaiKhoan->resetPassword($user['id'], $hashPass);
+            
             if ($status) {
                 $_SESSION['success'] = "Đã đổi mật khẩu thành công";
                 $_SESSION['flash'] = true;
-                header("location: " . BASE_ADMIN_URL . '?act=sua-mat-khau-ca-nhan-quan-tri');
+                header("location: " . BASE_ADMIN_URL . '?act=form-sua-thong-tin-ca-nhan-quan-tri');
                 exit();
             } else {
                 die('Lỗi khi cập nhật mật khẩu');
             }
         } else {
             $_SESSION['flash'] = true;
-            header("location: " . BASE_ADMIN_URL . '?act=sua-mat-khau-ca-nhan-quan-tri');
+            header("location: " . BASE_ADMIN_URL . '?act=form-sua-thong-tin-ca-nhan-quan-tri');
             exit();
         }
     }
