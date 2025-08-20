@@ -27,7 +27,7 @@
 <!-- End footer -->
 <!-- Page specific script -->
 <!-- code injected by live-server -->
-    
+
 </body>
 
 </html>

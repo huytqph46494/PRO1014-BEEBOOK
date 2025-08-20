@@ -75,7 +75,6 @@ class AdminTaiKhoan{
     }
 }
 
-    
 
  public function resetPassword($id, $mat_khau) {
         try {
@@ -129,5 +128,53 @@ class AdminTaiKhoan{
     }
 }
 
+    public function checkLogin($email, $mat_khau) {
+    try {
+        $sql = 'SELECT * FROM tai_khoans WHERE email = :email';
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute([':email' => $email]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($user && password_verify($mat_khau, $user['mat_khau'])) {
+            if ($user['chuc_vu_id'] == 1) { // là admin
+                if ($user['trang_thai'] == 1) {
+                    return $user; // ✅ trả về mảng user đầy đủ
+                } else {
+                    return "Tài khoản đã bị cấm";
+                }
+            } else {
+                return "Không phải tài khoản quản trị";
+            }
+        } else {
+            return "Email hoặc mật khẩu không đúng";
+        }
+    } catch (Exception $e) {
+        echo "Lỗi: " . $e->getMessage();
+        return false;
+    }
 }
-?>
+
+public function getTaiKhoanFromEmail($email) {
+    try {
+        $sql = "SELECT * FROM tai_khoans WHERE email = :email LIMIT 1";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute([':email' => $email]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    } catch (Exception $e) {
+        echo "Lỗi: " . $e->getMessage();
+        return null;
+    }
+}
+
+ public function getTaiKhoanformEmail($email) {
+        try {
+            $sql = 'SELECT * FROM tai_khoans WHERE email = :email';
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([':email' => $email]);
+            return $stmt->fetch();
+        } catch (Exception $e) {
+            echo "Lỗi: " . $e->getMessage();
+        }
+    }
+
+}

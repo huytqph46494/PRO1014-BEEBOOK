@@ -11,11 +11,15 @@
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-
-
         <li class="nav-item">
             <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                 <i class="fas fa-expand-arrows-alt"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="<?= BASE_ADMIN_URL . '?act=logout-admin'?>"
+                onclick="return confirm('Bạn có chắc muốn đăng xuất không ?')">
+                <i class="fas fa-sign-out-alt"></i>
             </a>
         </li>
     </ul>
