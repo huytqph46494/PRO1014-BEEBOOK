@@ -9,16 +9,12 @@ class HomeController
     }
 
     public function home(){
-        echo "Chào mừng bạn đến Home!";
+        $listSanPham = $this->modelSanPham->getAllSanPham();
+        require_once './views/home.php';
     }
 
     public function trangChu(){
         echo "Chào mừng bạn đến với Trang Chủ!";
-    }
-    public function danhSachSanPham(){
-        // Lấy danh sách sản phẩm từ model
-        $listProduct = $this->modelSanPham->getAllProduct();
-        // var_dump($listProduct);die();
-        require_once './views/listProduct.php';
-    }
+    
+}
 }
