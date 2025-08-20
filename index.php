@@ -1,4 +1,6 @@
 <?php 
+session_start();
+
 // Require file Common
 require_once './commons/env.php'; // Khai báo biến môi trường
 require_once './commons/function.php'; // Hàm hỗ trợ
@@ -7,7 +9,7 @@ require_once './commons/function.php'; // Hàm hỗ trợ
 require_once './controllers/HomeController.php';
 
 // Require toàn bộ file Models
-require_once './models/Student.php';
+require_once './models/TaiKhoan.php';
 require_once './models/SanPham.php';
 
 // Route
@@ -23,6 +25,12 @@ match ($act) {
     'danh-sach-san-pham' => (new HomeController())->danhSachSanPham(), // Danh sách sản phẩm
     
     'sua_san_pham' => (new HomeController())->suaSanPham(), // Thêm xử lý sửa
+
+    'chi-tiet-san-pham' => (new HomeController())->chiTietSanPham(), // Chi tiết sản phẩm
+
+    'login' => (new HomeController())->formLogin(), // Đăng nhập
+
+    'check_login' => (new HomeController())->postLogin(), // Xử lý đăng nhập
 
     default => require './views/404.php'
 };
