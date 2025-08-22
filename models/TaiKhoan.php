@@ -16,7 +16,7 @@ class TaiKhoan{
         if ($user && password_verify($mat_khau, $user['mat_khau'])) {
             if ($user['chuc_vu_id'] == 2) { // là client
                 if ($user['trang_thai'] == 1) {
-                    return $user['email']; 
+                    return $user; 
                 } else {
                     return "Tài khoản đã bị cấm";
                 }

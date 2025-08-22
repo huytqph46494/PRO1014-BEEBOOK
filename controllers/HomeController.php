@@ -5,13 +5,13 @@ class HomeController
     public $modelSanPham;   
     public $modelTaiKhoan;
     public $modelGioHang;
-    public $modeDonHang;
+    public $modelDonHang;
 
     public function __construct() {
         $this->modelSanPham = new SanPham();
         $this->modelTaiKhoan = new TaiKhoan();
         $this->modelGioHang = new GioHang();
-        $this->modeDonHang = new DonHang();
+        $this->modelDonHang = new DonHang();
     }
 
     public function home(){
@@ -180,8 +180,50 @@ public function addGioHang()
             $ma_don_hang = 'DH - ' . rand(1000,9999); // Tạo mã đơn hàng duy nhất
 
             //thêm thông tin vào db 
-            $this->modeDonHang->addDonHang($tai_khoan_id, $ten_nguoi_nhan, $email_nguoi_nhan, $sdt_nguoi_nhan, $dia_chi_nguoi_nhan, $ghi_chu, $tong_tien, $phuong_thuc_thanh_toan_id, $ngay_dat, $ma_don_hang);
-            var_dump('Đặt hàng thành công');die;
+            $donHangId = $this->modelDonHang->addDonHang($tai_khoan_id,
+             $ten_nguoi_nhan,
+              $email_nguoi_nhan, 
+              $sdt_nguoi_nhan, 
+              $dia_chi_nguoi_nhan,
+               $ghi_chu, $tong_tien, 
+               $phuong_thuc_thanh_toan_id, 
+               $ngay_dat, $ma_don_hang,
+            $trang_thai_id
+        );
+        //lấy giỏ hàng của người dùng
+         $gioHang = $this->modelGioHang->getGioHangFromUser($tai_khoan_id);
+
+         //lây sản phẩm chi tiết đơn hàng
+         if ($donHangId) {
+            //lấy ra toàn bộ sản phẩm trong giỏ hàng
+           $chiTietGioHang = $this->modelGioHang->getDetailGioHang($gioHang['id']);
+
+           // thêm từng sp từ giỏ hàng vào bảng chi tiết đơn hàng
+           foreach($chiTietGioHang as $item){
+               $donGia = $item['gia_khuyen_mai'] ?? $item['gia_san_pham']; //ƯU tiên đơn giá sẽ lấy giá khuyến mãi
+
+               $this->modelDonHang->addChiTietDonHang(
+                $donHangId,
+                $item['san_pham_id'],
+                $donGia,
+                $item['so_luong'],
+                $donGia * $item['so_luong']
+
+               );
+           }
+           $this->modelGioHang->clearDetailGioHang($gioHang['id']);
+
+            $this->modelGioHang->clearGioHang($tai_khoan_id);
+
+            //chuyển hướng về trang lịch sử mua hàng
+            
+            // header("Location:" . BASE_URL . '?act=lich-su-mua-hang');
+            exit;
+         } else{
+            var_dump('lỗi đặgt hang vui long thử lại sau');
+            die;
+         }
+          
         }
     }
 }
