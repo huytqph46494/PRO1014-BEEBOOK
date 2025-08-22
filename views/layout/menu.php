@@ -59,18 +59,18 @@
                         <div class="header-configure-area">
                             <ul class="nav justify-content-end">
                                 <label for="">
-                                  <?php if (isset($_SESSION['user_client'])): ?>
-    <span>Xin chào, <?php echo $_SESSION['user_client']['ho_ten']; ?></span>
-<?php endif; ?>
-</label>
+                                    <?php if (isset($_SESSION['user_client'])) {
+                                    echo $_SESSION['user_client'] ['email'];
+                                  }?>
+                                </label>
                                 <li class="user-hover">
                                     <a href="#">
                                         <i class="pe-7s-user"></i>
                                     </a>
                                     <ul class="dropdown-list">
-                                         <?php if (!isset($_SESSION['user_client'])) { ?>
-                                 <li><a href="<?= BASE_URL . '?act=login' ?>">Đăng nhập</a></li>
-                                     <?php } else { ?>
+                                        <?php if (!isset($_SESSION['user_client'])) { ?>
+                                        <li><a href="<?= BASE_URL . '?act=login' ?>">Đăng nhập</a></li>
+                                        <?php } else { ?>
                                         <li><a href="my-account.html">Tài khoản</a></li>
                                         <?php } ?>
                                     </ul>

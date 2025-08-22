@@ -16,7 +16,7 @@ class TaiKhoan{
         if ($user && password_verify($mat_khau, $user['mat_khau'])) {
             if ($user['chuc_vu_id'] == 2) { // là client
                 if ($user['trang_thai'] == 1) {
-                    return $user; // ✅ trả về mảng user đầy đủ
+                    return $user['email']; 
                 } else {
                     return "Tài khoản đã bị cấm";
                 }
@@ -31,14 +31,22 @@ class TaiKhoan{
         return false;
     }
 }
- public function getTaiKhoanFormEmail($email) {
+ public function getTaiKhoanFromEmail($email) {
         try {
+
             $sql = 'SELECT * FROM tai_khoans WHERE email = :email';
+
             $stmt = $this->conn->prepare($sql);
-            $stmt->execute([':email' => $email]);
+
+            $stmt->execute([
+                ':email' => $email
+            ]);
+
             return $stmt->fetch();
         } catch (Exception $e) {
             echo "Lỗi: " . $e->getMessage();
+            return false;
         }
     }
+    
 }

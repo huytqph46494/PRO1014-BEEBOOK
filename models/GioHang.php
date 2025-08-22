@@ -12,11 +12,10 @@ class GioHang {
             $sql = 'SELECT * FROM gio_hangs WHERE tai_khoan_id = :tai_khoan_id';
             $stmt = $this->conn->prepare($sql);
 
-            $stmt->execute([
-                ':tai_khoan_id' => $id
-            ]);
+            $stmt->execute([':tai_khoan_id'=>$id]);
 
-            return $stmt->fetch(PDO::FETCH_ASSOC); // lấy 1 record
+            return $stmt->fetch();
+
         } catch (Exception $e) {
             echo "Lỗi: " . $e->getMessage();
         }
@@ -30,11 +29,9 @@ class GioHang {
                     WHERE chi_tiet_gio_hangs.gio_hang_id = :gio_hang_id';
             $stmt = $this->conn->prepare($sql);
 
-            $stmt->execute([
-                ':gio_hang_id' => $id
-            ]);
+            $stmt->execute([':gio_hang_id' =>$id]);
 
-            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $stmt->fetchAll();
         } catch (Exception $e) {
             echo "Lỗi: " . $e->getMessage();
         }
@@ -45,9 +42,7 @@ class GioHang {
             $sql = 'INSERT INTO gio_hangs (tai_khoan_id) VALUES (:id)';
             $stmt = $this->conn->prepare($sql);
 
-            $stmt->execute([
-                ':id' => $id
-            ]);
+            $stmt->execute([':id' => $id]);
 
             return $this->conn->lastInsertId();
         } catch (Exception $e) {
@@ -62,11 +57,7 @@ class GioHang {
                     WHERE gio_hang_id = :gio_hang_id AND san_pham_id = :san_pham_id';
             $stmt = $this->conn->prepare($sql);
 
-            $stmt->execute([
-                ':gio_hang_id' => $gio_hang_id,
-                ':san_pham_id' => $san_pham_id,
-                ':so_luong'    => $so_luong
-            ]);
+            $stmt->execute([':gio_hang_id' => $gio_hang_id,':san_pham_id' => $san_pham_id,':so_luong' => $so_luong]);
 
             return true;
         } catch (Exception $e) {
@@ -80,11 +71,7 @@ class GioHang {
                     VALUES (:gio_hang_id, :san_pham_id, :so_luong)';
             $stmt = $this->conn->prepare($sql);
 
-            $stmt->execute([
-                ':gio_hang_id' => $gio_hang_id,
-                ':san_pham_id' => $san_pham_id,
-                ':so_luong'    => $so_luong
-            ]);
+            $stmt->execute([':gio_hang_id' => $gio_hang_id,':san_pham_id' => $san_pham_id,':so_luong' =>$so_luong]);
 
             return true;
         } catch (Exception $e) {
