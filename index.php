@@ -37,6 +37,13 @@ match ($act) {
 
     'xu-ly-thanh-toan' => (new HomeController())->postThanhToan(),
 
+    'lich-su-mua-hang' => (new HomeController())->lichSuMuaHang(),
+    
+    'chi-tiet-mua-hang' => (new HomeController())->chiTietMuaHang(),
+
+    'huy-don-hang' => (new HomeController())->huyDonHang(),
+
+    //auth    
     'login' => (new HomeController())->formLogin(), // Đăng nhập
 
     'check_login' => (new HomeController())->postLogin(), // Xử lý đăng nhập

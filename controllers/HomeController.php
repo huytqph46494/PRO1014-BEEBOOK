@@ -217,13 +217,71 @@ public function addGioHang()
 
             //chuyển hướng về trang lịch sử mua hàng
             
-            // header("Location:" . BASE_URL . '?act=lich-su-mua-hang');
+            header("Location:" . BASE_URL . '?act=lich-su-mua-hang');
             exit;
          } else{
-            var_dump('lỗi đặgt hang vui long thử lại sau');
+            var_dump('lỗi đặg hàng vui lòng thử lại sau!');
             die;
          }
           
+        }
+    }
+
+    public function lichSuMuaHang(){
+        if (isset($_SESSION['user_client'])) {
+            //Lấy ra thông tin user
+            $user = $this->modelTaiKhoan->getTaiKhoanFromEmail($_SESSION['user_client']['email']);
+            $tai_khoan_id = $user['id'];
+            
+            //Lấy ra danh sách trạng thái đơn hàng
+            $arrtrangThaiDonHang = $this->modelDonHang->gettrangThaiDonHang();
+            $trangThaiDonHang = array_column($arrtrangThaiDonHang, 'ten_trang_thai', 'id');
+
+            //Lấy ra danh sách phương thức thanh toán
+            $arrphuongThucThanhToan = $this->modelDonHang->getphuongThucThanhToan();
+            $phuongThucThanhToan = array_column($arrphuongThucThanhToan, 'ten_phuong_thuc', 'id');
+
+            //Lấy ra danh sách tất cả đơn hàng của tài khoản
+            $donHangs = $this->modelDonHang->getDonHangFromUser($tai_khoan_id);
+            require_once "./views/lichSuMuaHang.php";
+            }else{
+            var_dump('Chưa đăng nhập');die;
+        }
+    }
+
+    public function chiTietMuaHang(){
+
+        
+    }
+
+    public function huyDonHang(){
+        if (isset($_SESSION['user_client'])) {
+            //Lấy ra thông tin user
+            $user = $this->modelTaiKhoan->getTaiKhoanFromEmail($_SESSION['user_client']['email']);
+            $tai_khoan_id = $user['id'];
+            
+            //lấy id đơn hàng chuyền từ url
+            $donHangId = $_GET['id'];
+
+            //Kiểm tra đơn hàng
+            $donHangs = $this->modelDonHang->getDonHangById($donHangId);
+
+            if($donHangs['tai_khoan_id'] != $tai_khoan_id){
+                echo "Bạn không có quyền hủy đơn hàng này!";
+                exit;
+            }
+            if($donHangs['trang_thai_id'] != 1){
+                echo "Chỉ đơn hàng ở trạng thái chưa xác nhận mới có thể hủy!";
+                exit;
+            }
+
+            //Hủy đơn
+            $this->modelDonHang->updateTrangThaiDonHang($donHangId, 11);
+             header("Location:" . BASE_URL . '?act=lich-su-mua-hang');
+            exit;
+            
+            }else{
+            var_dump('Chưa đăng nhập');die;
         }
     }
 }
