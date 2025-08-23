@@ -250,9 +250,42 @@ public function addGioHang()
     }
 
     public function chiTietMuaHang(){
-
         
+        if (isset($_SESSION['user_client'])) {
+            //Lấy ra thông tin user
+            $user = $this->modelTaiKhoan->getTaiKhoanFromEmail($_SESSION['user_client']['email']);
+            $tai_khoan_id = $user['id'];
+            
+            //lấy id đơn hàng chuyền từ url
+            $donHangId = $_GET['id'];
+
+            //Lấy ra danh sách trạng thái đơn hàng
+            $arrtrangThaiDonHang = $this->modelDonHang->gettrangThaiDonHang();
+            $trangThaiDonHang = array_column($arrtrangThaiDonHang, 'ten_trang_thai', 'id');
+
+            //Lấy ra danh sách phương thức thanh toán
+            $arrphuongThucThanhToan = $this->modelDonHang->getphuongThucThanhToan();
+            $phuongThucThanhToan = array_column($arrphuongThucThanhToan, 'ten_phuong_thuc', 'id');
+
+            //Lấy ra thông tin đơn hàng theo ID
+            $donHang = $this->modelDonHang->getDonHangById($donHangId);
+
+            //Lấy thông tin sản phẩm của đơn hàng trong bảng tri tiết đơn hàng
+            $chiTietDonHang = $this->modelDonHang->getChiTietDonHangByDonHangId($donHangId);
+
+            if ($donHang['tai_khoan_id']!= $tai_khoan_id){
+                echo "Bạn không có quyền truy cập đơn hàng này.";
+                exit;
+            }
+            require_once "./views/chiTietMuaHang.php";
+
+            
+            
+            }else{
+            var_dump('Chưa đăng nhập');die;
+        }
     }
+        
 
     public function huyDonHang(){
         if (isset($_SESSION['user_client'])) {

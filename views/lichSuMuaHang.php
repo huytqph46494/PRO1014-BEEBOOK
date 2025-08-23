@@ -52,6 +52,9 @@
                                             <td><?= $phuongThucThanhToan[$donHangs['phuong_thuc_thanh_toan_id']]?></td>
                                             <td><?= $trangThaiDonHang[$donHangs['trang_thai_id']]?></td>
                                             <td>
+                                                <a href="<?= BASE_URL ?>?act=chi-tiet-mua-hang&id=<?= $donHangs['id'] ?>"class="btn btn-sqr"> 
+                                                    Chi tiết đơn hàng
+                                                </a>
                                                 <?php if($donHangs['trang_thai_id'] == 1):?>
                                                 <a href="<?= BASE_URL ?>?act=huy-don-hang&id=<?= $donHangs['id'] ?>"
                                                     class="btn btn-sqr"
