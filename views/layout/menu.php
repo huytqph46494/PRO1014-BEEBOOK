@@ -13,7 +13,7 @@
                 <div class="col-lg-2">
                     <div class="logo">
                         <a href="<?= BASE_URL ?>">
-                            <img src="assets/img/logo/logo1.png" alt="Brand Logo">
+                            <img src="assets/img/logo/logo2.png" alt="Brand Logo">
                         </a>
                     </div>
                 </div>
@@ -27,14 +27,8 @@
                             <nav class="desktop-menu">
                                 <ul>
                                     <li><a href="<?= BASE_URL ?>">Trang trủ</a></li>
-
                                     </li>
-
-                                    <li><a href="#">Sản Phẩm<i class="fa fa-angle-down"></i></a>
-                                        <ul class="dropdown">
-                                            <li><a href="#">Danh sách sản phẩm</a></li>
-
-                                        </ul>
+                                    <li><a href="#">Sản Phẩm</a>
                                     </li>
                                     <li><a href="#">Giới thiệu</a></li>
                                     <li><a href="#">Liên hệ</a></li>

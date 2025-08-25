@@ -14,7 +14,7 @@
                         <div class="widget-title">
                             <div class="widget-logo">
                                 <a href="index.html">
-                                    <img src="assets/img/logo/logo1.png" alt="brand logo">
+                                    <img src="assets/img/logo/logo2.png" alt="brand logo">
                                 </a>
                             </div>
                         </div>
@@ -95,7 +95,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="copyright-text text-center">
-                        <p>&copy; 2025 <b>BEEBOOK</b> Made with by <a href="https://hasthemes.com/"><b>Group 2</b><i
+                        <p>&copy; 2025 <b>BEEBOOK</b> Made with by <a href="#"><b>Group 2</b><i
                                     class="fa fa-heart text-danger"></i></a>
                         </p>
                     </div>
