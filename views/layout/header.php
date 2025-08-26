@@ -1,8 +1,20 @@
+
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+$chiTietGioHang = isset($_SESSION['gioHang']) ? $_SESSION['gioHang'] : [];
+?>
+
 <!doctype html>
 <html class="no-js" lang="en">
 
 
 <!-- Mirrored from htmldemo.net/corano/corano/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 29 Jun 2024 09:53:03 GMT -->
+
+
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">

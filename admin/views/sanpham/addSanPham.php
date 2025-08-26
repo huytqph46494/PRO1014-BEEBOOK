@@ -113,7 +113,8 @@
                                     <label>Trạnh thái</label>
                                     <select class="form-control" name="trang_thai" id="exampleFormControlSelect1">
 
-                                        <option selected disabled>Chọn danh mục sản phẩm</option>
+
+                                        <option selected disabled>Chọn trạng thái</option>
                                         <option value="1">Còn bán</option>
                                         <option value="2">Dừng bán</option>
 
@@ -134,7 +135,8 @@
                             </div>
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+
+                                <button type="submit" class="btn btn-primary">Thêm</button>
                             </div>
                         </form>
                     </div>

@@ -27,34 +27,37 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">Sửa danh mục sản phẩm</h3>
-              </div>
-              <!-- /.card-header -->
-              <!-- form start -->
-              <form action="<?= BASE_ADMIN_URL . '?act=sua-danh-muc' ?>" method="POST">
-                <input type="text" name="don_hang_id" value="<?= $donHang['id'] ?>" hidden>
-                <div class="card-body">
-                  <div class="form-group">
-                    <label>Tên danh mục</label>
-                    <input type="text" class="form-control" name="ten_danh_muc" value="<?= $danhMuc['ten_danh_muc'] ?>"  placeholder="Nhập tên danh mục">
-                   <?php if(isset($errors['ten_danh_muc'])) { ?>
-                    <p class="text-danger"><?=$errors['ten_danh_muc'] ?> </p>
-                    <?php } ?>
-                  </div>
 
-                   <div class="form-group">
-                    <label>Mô tả</label>
-                    <textarea name="mo_ta" id="" class="form-control" placeholder="Nhập mô tả"><?= $danhMuc['mo_ta'] ?></textarea>
-                  </div>
+                        <div class="card-header">
+                            <h3 class="card-title">Sửa danh mục sản phẩm</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <!-- form start -->
+                        <form action="<?= BASE_ADMIN_URL . '?act=sua-danh-muc' ?>" method="POST">
+                            <input type="text" name="don_hang_id" value="<?= $donHang['id'] ?>" hidden>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label>Tên danh mục</label>
+                                    <input type="text" class="form-control" name="ten_danh_muc"
+                                        value="<?= $danhMuc['ten_danh_muc'] ?>" placeholder="Nhập tên danh mục">
+                                    <?php if(isset($errors['ten_danh_muc'])) { ?>
+                                    <p class="text-danger"><?=$errors['ten_danh_muc'] ?> </p>
+                                    <?php } ?>
+                                </div>
 
-               </div>
+                                <div class="form-group">
+                                    <label>Mô tả</label>
+                                    <textarea name="mo_ta" id="" class="form-control"
+                                        placeholder="Nhập mô tả"><?= $danhMuc['mo_ta'] ?></textarea>
+                                </div>
 
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-              </form>
-            </div>
+                            </div>
+
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">Sửa</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
                 <!-- /.col -->
             </div>

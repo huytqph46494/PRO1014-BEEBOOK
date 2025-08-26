@@ -49,15 +49,18 @@
                                             <th>Thành tiền</th>
                                         </tr>
                                         <?php foreach ($chiTietDonHang as $item): ?>
-                                            <tr>
-                                                <td>
-                                                    <img class="img-fluid" src="<?= BASE_URL . $item['hinh_anh']?>" alt="Product" width="100px"/>
-                                                </td>
-                                                <td><?= $item['ten_san_pham'] ?></td>
-                                                <td><?= number_format($item['don_gia'],0,',', '.' )?> đ</td>
-                                                <td><?= $item['so_luong'] ?></td>
-                                                <td><?= number_format($item['thanh_tien'],0,',', '.' )?> đ</td>
-                                            </tr>
+
+                                        <tr>
+                                            <td>
+                                                <img class="img-fluid" src="<?= BASE_URL . $item['hinh_anh']?>"
+                                                    alt="Product" width="100px" />
+                                            </td>
+                                            <td><?= $item['ten_san_pham'] ?></td>
+                                            <td><?= number_format($item['don_gia'],0,',', '.' )?> đ</td>
+                                            <td><?= $item['so_luong'] ?></td>
+                                            <td><?= number_format($item['thanh_tien'],0,',', '.' )?> đ</td>
+                                        </tr>
+
                                         <?php endforeach; ?>
                                     </tbody>
                                 </table>

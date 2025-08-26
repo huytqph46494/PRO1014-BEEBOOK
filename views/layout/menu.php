@@ -1,4 +1,5 @@
 <!-- Start Header Area -->
+
 <header class="header-area header-wide">
     <!-- main header start -->
 
@@ -12,7 +13,8 @@
                 <div class="col-lg-2">
                     <div class="logo">
                         <a href="<?= BASE_URL ?>">
-                            <img src="assets/img/logo/logo1.png" alt="Brand Logo">
+
+                            <img src="assets/img/logo/logo2.png" alt="Brand Logo">
                         </a>
                     </div>
                 </div>
@@ -28,12 +30,7 @@
                                     <li><a href="<?= BASE_URL ?>">Trang trủ</a></li>
 
                                     </li>
-
-                                    <li><a href="#">Sản Phẩm<i class="fa fa-angle-down"></i></a>
-                                        <ul class="dropdown">
-                                            <li><a href="blog-left-sidebar.html">blog left sidebar</a></li>
-
-                                        </ul>
+                                    <li><a href="#">Sản Phẩm</a>
                                     </li>
                                     <li><a href="#">Giới thiệu</a></li>
                                     <li><a href="#">Liên hệ</a></li>
@@ -60,7 +57,8 @@
                             <ul class="nav justify-content-end">
                                 <label for="">
                                     <?php if (isset($_SESSION['user_client'])) {
-                                    echo $_SESSION['user_client'] ['email'];
+
+                                    echo "Xin chào, " . $_SESSION['user_client'] ['ho_ten'];
                                   }?>
                                 </label>
                                 <li class="user-hover">
@@ -71,7 +69,8 @@
                                         <?php if (!isset($_SESSION['user_client'])) { ?>
                                         <li><a href="<?= BASE_URL . '?act=login' ?>">Đăng nhập</a></li>
                                         <?php } else { ?>
-                                        <li><a href="my-account.html">Tài khoản</a></li>
+
+                                        <li><a href="#">Tài khoản</a></li>
                                         <li><a href="<?= BASE_URL . '?act=lich-su-mua-hang' ?>">Đơn hàng</a></li>
                                         <?php } ?>
                                     </ul>
