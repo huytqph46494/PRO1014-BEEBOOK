@@ -1,5 +1,8 @@
 <!-- Scroll to top start -->
+<<<<<<< HEAD
                             
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
 <div class="scroll-top not-visible">
     <i class="fa fa-angle-up"></i>
 </div>
@@ -65,7 +68,10 @@
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
             <div class="row align-items-center mt-20">
                 <div class="col-md-6">
                     <div class="newsletter-wrapper">
@@ -86,12 +92,19 @@
                 </div>
                 <div class="col-md-6">
                     <div class="footer-payment">
+<<<<<<< HEAD
                         <img src="assets/img/payment.png" alt="payment method"> 
+=======
+                        <img src="assets/img/payment.png" alt="payment method">
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
                     </div>
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
     </div>
     <div class="footer-bottom">
         <div class="container">
@@ -145,5 +158,8 @@
 
 <!-- Mirrored from htmldemo.net/corano/corano/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 29 Jun 2024 09:53:43 GMT -->
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
 </html>

@@ -27,7 +27,10 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card card-primary">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
                         <div class="card-header">
                             <h3 class="card-title">Thêm danh mục sản phẩm</h3>
                         </div>

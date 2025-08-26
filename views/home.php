@@ -1,5 +1,8 @@
 <?php require_once 'layout/header.php'; ?>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
 <?php require_once 'layout/menu.php'; ?>
 
 <main>
@@ -9,7 +12,10 @@
 
             <!-- single slider item start -->
             <div class="hero-single-slide hero-overlay">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
                 <div class="hero-slider-item bg-img" data-bg="assets/img/slider/banner.png">
                     <div class="container">
                         <div class="row">
@@ -22,9 +28,13 @@
 
             <!-- single slider item start -->
             <div class="hero-single-slide hero-overlay">
+<<<<<<< HEAD
 
                 <div class="hero-slider-item bg-img" data-bg="assets/img/slider/banner2.png">
 
+=======
+                <div class="hero-slider-item bg-img" data-bg="assets/img/slider/banner2.png">
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
                     <div class="container">
                         <div class="row">
                             <!-- nội dung slide 2 -->
@@ -33,6 +43,10 @@
                 </div>
             </div>
             <!-- single slider item end -->
+<<<<<<< HEAD
+=======
+
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
         </div>
     </section>
     <!-- hero slider area end -->
@@ -98,7 +112,10 @@
             <div class="col-sm-6">
                 <figure class="banner-statistics mt-20">
                     <a href="#">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
                         <img src="assets/img/slider/banner.png" alt="product banner">
                     </a>
                 </figure>
@@ -106,7 +123,10 @@
             <div class="col-sm-6">
                 <figure class="banner-statistics mt-20">
                     <a href="#">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
                         <img src="assets/img/slider/banner2.png" alt="product banner">
                     </a>
                 </figure>
@@ -125,7 +145,10 @@
                 <!-- section title start -->
                 <div class="section-title text-center">
                     <h2 class="title">Sản phẩm của chúng tôi</h2>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
                     <p class="sub-title">"Một cuốn sách, ngàn tri thức."</p>
                 </div>
                 <!-- section title start -->
@@ -237,7 +260,10 @@
             <div class="col-12">
                 <!-- section title start -->
                 <div class="section-title text-center">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
                     <h2 class="title">Những Câu Nói Hay Về Sách</h2>
                     <p class="sub-title">- Từ những tác giả vĩ đại - </p>
                 </div>
@@ -249,7 +275,10 @@
                 <div class="testimonial-thumb-wrapper">
                     <div class="testimonial-thumb-carousel">
                         <div class="testimonial-thumb">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
                             <img src="assets/img/testimonial/tacgia.jpg" alt="testimonial-thumb">
                         </div>
                         <div class="testimonial-thumb">
@@ -266,7 +295,10 @@
                 <div class="testimonial-content-wrapper">
                     <div class="testimonial-content-carousel">
                         <div class="testimonial-content">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
                             <p>“Một cuốn sách là giấc mơ mà bạn cầm trong tay, là nơi chứa đựng trí tuệ và tưởng tượng
                                 vô hạn mà bất kỳ ai cũng có thể bước vào và sống cùng nó.”</p>
                             <div class="ratings">
@@ -276,7 +308,10 @@
                                 <span><i class="fa fa-star-o"></i></span>
                                 <span><i class="fa fa-star-o"></i></span>
                             </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
                             <h5 class="testimonial-author">Neil Gaiman</h5>
                         </div>
                         <div class="testimonial-content">
@@ -289,7 +324,10 @@
                                 <span><i class="fa fa-star-o"></i></span>
                                 <span><i class="fa fa-star-o"></i></span>
                             </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
                             <h5 class="testimonial-author">Ernest Hemingway</h5>
                         </div>
                         <div class="testimonial-content">
@@ -302,7 +340,10 @@
                                 <span><i class="fa fa-star-o"></i></span>
                                 <span><i class="fa fa-star-o"></i></span>
                             </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
                             <h5 class="testimonial-author">Voltaire</h5>
                         </div>
                         <div class="testimonial-content">
@@ -315,7 +356,10 @@
                                 <span><i class="fa fa-star-o"></i></span>
                                 <span><i class="fa fa-star-o"></i></span>
                             </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
                             <h5 class="testimonial-author">George R.R. Martin</h5>
                         </div>
                     </div>
@@ -324,7 +368,10 @@
         </div>
     </div>
 </section>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
 </main>
 
 <?php require_once 'layout/miniCart.php'; ?>

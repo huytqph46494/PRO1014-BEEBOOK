@@ -1,5 +1,8 @@
  <!-- header -->
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
  <?php include './views/layout/header.php'?>
  <!-- Navbar -->
  <?php include './views/layout/navbar.php'?>

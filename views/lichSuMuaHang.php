@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
 <?php require_once 'layout/header.php'; ?>
 <?php require_once 'layout/menu.php'; ?>
 
@@ -79,4 +82,8 @@
 
 <?php require_once 'layout/miniCart.php'; ?>
 
+<<<<<<< HEAD
 <?php require_once 'layout/footer.php'; ?>
+=======
+<?php require_once 'layout/footer.php'; ?>
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3

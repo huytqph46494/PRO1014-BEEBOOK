@@ -19,7 +19,10 @@ $act = $_GET['act'] ?? '/';
 // Để bảo bảo tính chất chỉ gọi 1 hàm Controller để xử lý request thì mình sử dụng match
 
 match ($act) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
 '/' => (new HomeController())->home(), // Trang chủ
 
 'trangchu' => (new HomeController())->trangChu(), // Trang chủ

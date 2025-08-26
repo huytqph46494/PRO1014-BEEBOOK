@@ -1,6 +1,9 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
     <a href="#" class="brand-link">
         <img src="./assets/dist/img/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
             style="opacity: .8">
@@ -10,6 +13,10 @@
     <!-- Sidebar -->
     <div class="sidebar">
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -70,7 +77,10 @@
                             </a>
                         </li>
                         <li class="nav-item">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
                             <a href="<?= BASE_ADMIN_URL . '?act=form-sua-thong-tin-ca-nhan-quan-tri' ?>"
                                 class="nav-link">
                                 <i class="nav-icon far fa-user"></i>

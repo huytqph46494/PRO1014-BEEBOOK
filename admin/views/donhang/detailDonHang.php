@@ -14,7 +14,10 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
                     <h1>Quản lý danh sách đơn hàng: <?= $donHang['ma_don_hang'] ?></h1>
                 </div>
                 <div class="col-sm-6 d-flex justify-content-end align-items-center">
@@ -36,7 +39,10 @@
             </div>
         </div><!-- /.container-fluid -->
     </section>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
     <section class="content">
         <div class="container-fluid">
             <div class="row">
@@ -182,7 +188,10 @@
     </section>
     <!-- /.content -->
 </div>
+<<<<<<< HEAD
 >>>>>>> origin/main
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
 <!-- /.content-wrapper -->
 <!-- footer -->
 <?php include './views/layout/footer.php'; ?>

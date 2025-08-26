@@ -13,7 +13,10 @@
                 <div class="col-lg-2">
                     <div class="logo">
                         <a href="<?= BASE_URL ?>">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
                             <img src="assets/img/logo/logo2.png" alt="Brand Logo">
                         </a>
                     </div>
@@ -28,7 +31,10 @@
                             <nav class="desktop-menu">
                                 <ul>
                                     <li><a href="<?= BASE_URL ?>">Trang trủ</a></li>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
                                     </li>
                                     <li><a href="#">Sản Phẩm</a>
                                     </li>
@@ -57,7 +63,10 @@
                             <ul class="nav justify-content-end">
                                 <label for="">
                                     <?php if (isset($_SESSION['user_client'])) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
                                     echo "Xin chào, " . $_SESSION['user_client'] ['ho_ten'];
                                   }?>
                                 </label>
@@ -69,7 +78,10 @@
                                         <?php if (!isset($_SESSION['user_client'])) { ?>
                                         <li><a href="<?= BASE_URL . '?act=login' ?>">Đăng nhập</a></li>
                                         <?php } else { ?>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
                                         <li><a href="#">Tài khoản</a></li>
                                         <li><a href="<?= BASE_URL . '?act=lich-su-mua-hang' ?>">Đơn hàng</a></li>
                                         <?php } ?>

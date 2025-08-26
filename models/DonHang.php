@@ -118,10 +118,15 @@ class DonHang {
                     WHERE
                         chi_tiet_don_hangs.don_hang_id = :don_hang_id";
              $stmt = $this->conn->prepare($sql);
+<<<<<<< HEAD
              
            $stmt->execute([':don_hang_id' => $donHangId]); 
     
 
+=======
+             $stmt->execute([':don_hang_id' => $donHangId]);
+    
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
              
              return $stmt->fetchAll(PDO::FETCH_ASSOC);  
         } catch (Exception $e) {

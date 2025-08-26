@@ -1,5 +1,8 @@
 <?php require_once 'layout/header.php'; ?>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
 <?php require_once 'layout/menu.php'; ?>
 <main>
     <!-- breadcrumb area start -->
@@ -86,7 +89,10 @@
                                     </div>
                                     <p class="pro-desc"><?= $sanPham['mo_ta']?></p>
                                     <form action="<?= BASE_URL .'?act=them-gio-hang' ?>" method="post">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
                                         <div class="quantity-cart-box d-flex align-items-center">
                                             <h6 class="option-title">Số lượng:</h6>
                                             <div class="quantity">

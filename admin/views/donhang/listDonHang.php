@@ -14,7 +14,10 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
                     <h1>Quản lý danh sách đơn hàng</h1>
                 </div>
 
@@ -53,7 +56,10 @@
                                         <td><?=$donHang['ma_don_hang']?></td>
                                         <td><?=$donHang['ten_nguoi_nhan']?></td>
                                         <td><?=$donHang['sdt_nguoi_nhan']?></td>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
                                         <td><?= date('d/m/Y', strtotime($donHang['ngay_dat'])) ?></td>
                                         <td><?= number_format($donHang['tong_tien'], 0, ',', '.') ?> đ</td>
                                         <td>
@@ -61,6 +67,10 @@
                                                 class="badge border border-danger text-danger"><?= $donHang['ten_trang_thai'] ?></span>
                                         </td>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
                                         <td>
                                             <div class="btn-group"></div>
                                             <a
@@ -105,7 +115,10 @@
 <!-- /.container-fluid -->
 </section>
 <!-- /.content -->
+<<<<<<< HEAD
 >>>>>>> origin/main
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
 </div>
 <!-- /.content-wrapper -->
 <!-- footer -->

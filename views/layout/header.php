@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
 <?php
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
@@ -13,8 +16,11 @@ $chiTietGioHang = isset($_SESSION['gioHang']) ? $_SESSION['gioHang'] : [];
 
 <!-- Mirrored from htmldemo.net/corano/corano/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 29 Jun 2024 09:53:03 GMT -->
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">

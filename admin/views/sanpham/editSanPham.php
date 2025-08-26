@@ -18,7 +18,10 @@
                 </div>
                 <div class="col-sm-1">
                     <a href="<?= BASE_ADMIN_URL . '?act=san-pham'?>" class="btn btn-secondary">Quay lại</a>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
                 </div>
             </div><!-- /.container-fluid -->
     </section>
@@ -55,14 +58,20 @@
                             <div class="form-group">
                                 <label for="gia_san_pham">Giá sản phẩm</label>
                                 <input type="number" id="gia_san_pham" name="gia_san_pham" class="form-control"
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
                                     value="<?= (int)$sanPham['gia_san_pham'] ?>" placeholder="Nhập giá sản phẩm">
                             </div>
 
                             <div class="form-group">
                                 <label for="gia_khuyen_mai">Giá khuyến mãi</label>
                                 <input type="number" id="gia_khuyen_mai" name="gia_khuyen_mai" class="form-control"
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
                                     value="<?= (int)$sanPham['gia_khuyen_mai'] ?>"
                                     placeholder="Nhập giá khuyến mãi sản phẩm">
                             </div>

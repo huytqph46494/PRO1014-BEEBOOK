@@ -14,7 +14,10 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
                     <h1>Quản lý danh sách sản phẩm</h1>
                 </div>
 
@@ -23,7 +26,10 @@
     </section>
 
     <!-- Main content -->
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
     <section class="content">
 
         <!-- Default box -->
@@ -121,7 +127,10 @@
         </div>
         <!-- /.card -->
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
     </section>
     <!-- /.content -->
 </div>
@@ -159,4 +168,8 @@ $(document).ready(function() {
     })
 })
 </script>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
 </html>

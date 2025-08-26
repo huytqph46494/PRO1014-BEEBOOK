@@ -27,7 +27,10 @@
                             </div>
                             <div class="minicart-content">
                                 <h3 class="product-name">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
                                     <a href="#"><?= $sanPham['ten_san_pham'] ?></a>
                                 </h3>
                                 <p>
@@ -38,7 +41,10 @@
                             </div>
                             <button class="minicart-remove"><i class="pe-7s-close"></i></button>
                         </li>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
                         <?php endforeach; else: ?>
                         <li>Giỏ hàng của bạn đang trống.</li>
                         <?php endif; ?>
@@ -48,7 +54,10 @@
                 <div class="minicart-pricing-box">
                     <ul>
                         <li>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
                             <span>Tổng phụ</span>
                             <span><strong><?= formatPrice($tongMiniCart) . 'đ' ?></strong></span>
                         </li>
@@ -65,9 +74,13 @@
 
                 <div class="minicart-button">
                     <a href="<?= BASE_URL . '?act=gio-hang' ?>"><i class="fa fa-shopping-cart"></i> Xem giỏ hàng</a>
+<<<<<<< HEAD
 
                     <a href="<?= BASE_URL . '?act=thanh-toan' ?>"><i class="fa fa-share"></i> Thanh toán</a>
 
+=======
+                    <a href="<?= BASE_URL . '?act=thanh-toan' ?>"><i class="fa fa-share"></i> Thanh toán</a>
+>>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
                 </div>
             </div>
         </div>
