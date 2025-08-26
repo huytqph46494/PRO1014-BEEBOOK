@@ -118,7 +118,7 @@ class DonHang {
                     WHERE
                         chi_tiet_don_hangs.don_hang_id = :don_hang_id";
              $stmt = $this->conn->prepare($sql);
-             $stmt->execute([':id' => $donHangId]);      
+           $stmt->execute([':don_hang_id' => $donHangId]); 
              
              return $stmt->fetchAll(PDO::FETCH_ASSOC);  
         } catch (Exception $e) {

@@ -496,7 +496,6 @@
                     </div>
                     <!-- product item end -->
 
-                    <!-- product item start -->
                     <div class="product-item">
                         <figure class="product-thumb">
                             <a href="product-details.html">
@@ -551,7 +550,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- product item end -->
+                    <!-- product item end
 
                     <!-- product item start -->
                     <div class="product-item">
