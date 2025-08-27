@@ -37,7 +37,7 @@
                         <!-- /.card-header -->
                         <!-- form start -->
                         <form action="<?= BASE_ADMIN_URL . '?act=sua-danh-muc' ?>" method="POST">
-                            <input type="text" name="don_hang_id" value="<?= $donHang['id'] ?>" hidden>
+                            <input type="hidden" name="id" value="<?= $danhMuc['id'] ?>">
                             <div class="card-body">
                                 <div class="form-group">
                                     <label>Tên danh mục</label>
