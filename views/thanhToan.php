@@ -1,8 +1,5 @@
     <?php require_once 'layout/header.php'; ?>
-<<<<<<< HEAD
 
-=======
->>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
     <?php require_once 'layout/menu.php'; ?>
 
     <main>
@@ -213,8 +210,5 @@
     </main>
 
     <?php require_once 'layout/miniCart.php'; ?>
-<<<<<<< HEAD
 
-=======
->>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
     <?php require_once 'layout/footer.php'; ?>

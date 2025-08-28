@@ -1,5 +1,4 @@
 <!-- Start Header Area -->
-
 <header class="header-area header-wide">
     <!-- main header start -->
 
@@ -13,11 +12,7 @@
                 <div class="col-lg-2">
                     <div class="logo">
                         <a href="<?= BASE_URL ?>">
-<<<<<<< HEAD
-
-=======
->>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
-                            <img src="assets/img/logo/logo2.png" alt="Brand Logo">
+                            <img src="assets/img/logo/logo1.png" alt="Brand Logo">
                         </a>
                     </div>
                 </div>
@@ -31,12 +26,14 @@
                             <nav class="desktop-menu">
                                 <ul>
                                     <li><a href="<?= BASE_URL ?>">Trang trủ</a></li>
-<<<<<<< HEAD
 
-=======
->>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
                                     </li>
-                                    <li><a href="#">Sản Phẩm</a>
+
+                                    <li><a href="#">Sản Phẩm<i class="fa fa-angle-down"></i></a>
+                                        <ul class="dropdown">
+                                            <li><a href="blog-left-sidebar.html">blog left sidebar</a></li>
+
+                                        </ul>
                                     </li>
                                     <li><a href="#">Giới thiệu</a></li>
                                     <li><a href="#">Liên hệ</a></li>
@@ -63,11 +60,7 @@
                             <ul class="nav justify-content-end">
                                 <label for="">
                                     <?php if (isset($_SESSION['user_client'])) {
-<<<<<<< HEAD
-
-=======
->>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
-                                    echo "Xin chào, " . $_SESSION['user_client'] ['ho_ten'];
+                                    echo $_SESSION['user_client'] ['email'];
                                   }?>
                                 </label>
                                 <li class="user-hover">
@@ -78,11 +71,7 @@
                                         <?php if (!isset($_SESSION['user_client'])) { ?>
                                         <li><a href="<?= BASE_URL . '?act=login' ?>">Đăng nhập</a></li>
                                         <?php } else { ?>
-<<<<<<< HEAD
-
-=======
->>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
-                                        <li><a href="#">Tài khoản</a></li>
+                                        <li><a href="my-account.html">Tài khoản</a></li>
                                         <li><a href="<?= BASE_URL . '?act=lich-su-mua-hang' ?>">Đơn hàng</a></li>
                                         <?php } ?>
                                     </ul>

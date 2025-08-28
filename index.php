@@ -19,38 +19,34 @@ $act = $_GET['act'] ?? '/';
 // Để bảo bảo tính chất chỉ gọi 1 hàm Controller để xử lý request thì mình sử dụng match
 
 match ($act) {
-<<<<<<< HEAD
+    '/' => (new HomeController())->home(), // Trang chủ
+    
+    'trangchu' => (new HomeController())->trangChu(), // Trang chủ
 
-=======
->>>>>>> 19a595c5928eb53e7141de2b811f07186e38dbc3
-'/' => (new HomeController())->home(), // Trang chủ
+    'danh-sach-san-pham' => (new HomeController())->danhSachSanPham(), // Danh sách sản phẩm
+    
+    'sua_san_pham' => (new HomeController())->suaSanPham(), // Thêm xử lý sửa
 
-'trangchu' => (new HomeController())->trangChu(), // Trang chủ
+    'chi-tiet-san-pham' => (new HomeController())->chiTietSanPham(), // Chi tiết sản phẩm
 
-'danh-sach-san-pham' => (new HomeController())->danhSachSanPham(), // Danh sách sản phẩm
+    'them-gio-hang' =>(new HomeController())->addGioHang(),
 
-'sua_san_pham' => (new HomeController())->suaSanPham(), // Thêm xử lý sửa
+    'gio-hang' =>(new HomeController())->gioHang(),
 
-'chi-tiet-san-pham' => (new HomeController())->chiTietSanPham(), // Chi tiết sản phẩm
+    'thanh-toan' => (new HomeController())->thanhToan(),
 
-'them-gio-hang' =>(new HomeController())->addGioHang(),
+    'xu-ly-thanh-toan' => (new HomeController())->postThanhToan(),
 
-'gio-hang' =>(new HomeController())->gioHang(),
+    'lich-su-mua-hang' => (new HomeController())->lichSuMuaHang(),
+    
+    'chi-tiet-mua-hang' => (new HomeController())->chiTietMuaHang(),
 
-'thanh-toan' => (new HomeController())->thanhToan(),
+    'huy-don-hang' => (new HomeController())->huyDonHang(),
 
-'xu-ly-thanh-toan' => (new HomeController())->postThanhToan(),
+    //auth    
+    'login' => (new HomeController())->formLogin(), // Đăng nhập
 
-'lich-su-mua-hang' => (new HomeController())->lichSuMuaHang(),
+    'check_login' => (new HomeController())->postLogin(), // Xử lý đăng nhập
 
-'chi-tiet-mua-hang' => (new HomeController())->chiTietMuaHang(),
-
-'huy-don-hang' => (new HomeController())->huyDonHang(),
-
-//auth
-'login' => (new HomeController())->formLogin(), // Đăng nhập
-
-'check_login' => (new HomeController())->postLogin(), // Xử lý đăng nhập
-
-default => require './views/404.php'
+    default => require './views/404.php'
 };
