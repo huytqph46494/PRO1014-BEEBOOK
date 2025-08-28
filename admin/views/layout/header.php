@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bee-Book</title>
+    <title>Admin Bee-Book</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"

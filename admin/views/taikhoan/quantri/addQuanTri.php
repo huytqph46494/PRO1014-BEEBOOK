@@ -27,35 +27,35 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">Thêm tài khoản quản trị</h3>
-              </div>
-              <!-- /.card-header -->
-              <!-- form start -->
-              <form action="<?= BASE_ADMIN_URL . '?act=them-quan-tri' ?>" method="POST">
-                <div class="card-body">
-    <div class="form-group">
-        <label>Họ tên</label>
-        <input type="text" class="form-control" name="ho_ten" placeholder="Nhập họ tên">
-        <?php if (isset($_SESSION["error"]['ho_ten'])) { ?>
-            <p class="text-danger"><?= $_SESSION['error']['ho_ten'] ?></p>
-        <?php } ?>
-    </div>
+                        <div class="card-header">
+                            <h3 class="card-title">Thêm tài khoản quản trị</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <!-- form start -->
+                        <form action="<?= BASE_ADMIN_URL . '?act=them-quan-tri' ?>" method="POST">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label>Họ tên</label>
+                                    <input type="text" class="form-control" name="ho_ten" placeholder="Nhập họ tên">
+                                    <?php if (isset($_SESSION["error"]['ho_ten'])) { ?>
+                                    <p class="text-danger"><?= $_SESSION['error']['ho_ten'] ?></p>
+                                    <?php } ?>
+                                </div>
 
-    <div class="form-group">
-        <label>Email</label>
-        <input type="email" class="form-control" name="email" placeholder="Nhập email">
-        <?php if (isset($_SESSION["error"]['email'])) { ?>
-            <p class="text-danger"><?= $_SESSION['error']['email'] ?></p>
-        <?php } ?>
-    </div>
-</div>
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" class="form-control" name="email" placeholder="Nhập email">
+                                    <?php if (isset($_SESSION["error"]['email'])) { ?>
+                                    <p class="text-danger"><?= $_SESSION['error']['email'] ?></p>
+                                    <?php } ?>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">Thêm tài khoản</button>
+                            </div>
 
-              </form>
-            </div>
+                        </form>
+                    </div>
                 </div>
                 <!-- /.col -->
             </div>

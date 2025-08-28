@@ -53,7 +53,7 @@
                             </div>
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">Sửa danh mục</button>
                             </div>
                         </form>
                     </div>

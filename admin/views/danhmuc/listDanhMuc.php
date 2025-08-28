@@ -57,7 +57,7 @@
                                                 <button class="btn btn-warning">Sửa</button>
                                             </a>
                                             <a href="<?= BASE_ADMIN_URL . '?act=xoa-danh-muc&id_danh_muc=' . $danhMuc['id'] ?>"
-                                                onclick="return confirm('bạn có đồng ý xóa không')">
+                                                onclick="return confirm('Bạn có đồng ý xóa danh mục không?')">
                                                 <button class="btn btn-danger">Xóa</button>
                                             </a>
 

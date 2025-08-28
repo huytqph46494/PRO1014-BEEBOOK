@@ -14,7 +14,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Quản lý danh sách sách</h1>
+                    <h1>Quản lý danh sách sản phẩm</h1>
                 </div>
 
             </div>
@@ -30,7 +30,7 @@
                     <div class="card">
                         <div class="card-header">
                             <a href="<?= BASE_ADMIN_URL . '?act=form-them-san-pham' ?>">
-                                <button class="btn btn-success">Thêm sách mới</button>
+                                <button class="btn btn-success">Thêm sản phẩm mới</button>
                             </a>
                         </div>
                         <!-- /.card-header -->
@@ -42,6 +42,8 @@
                                         <th>Tên sản phẩm</th>
                                         <th>Ảnh sản phẩm</th>
                                         <th>Giá tiền</th>
+                                        <th>Giá khuyến mãi</th>
+
                                         <th>Số lượng</th>
                                         <th>Danh mục</th>
                                         <th>Trạng thái</th>
@@ -59,12 +61,17 @@
 
                                         </td>
 
-                                        <td><?=$sanPham['gia_san_pham']?></td>
+                                        <td><?=number_format($sanPham['gia_san_pham'], 0, ',', '.')?> đ</td>
+                                        <td><?=number_format($sanPham['gia_khuyen_mai'], 0, ',', '.')?> đ</td>
+
                                         <td><?=$sanPham['so_luong']?></td>
                                         <td><?= $sanPham['ten_danh_muc'] ?></td>
-                                        <td><?=$sanPham['trang_thai'] == 1 ? 'Còn bán':'Dừng bán';?></td>
-
-
+                                        <td>
+                                            <span
+                                                class="<?= $sanPham['trang_thai'] == 1 ? 'text-success' : 'text-danger' ?>">
+                                                <?= $sanPham['trang_thai'] == 1 ? 'Còn bán' : 'Dừng bán' ?>
+                                            </span>
+                                        </td>
                                         <td>
                                             <div class="btn-group"></div>
                                             <a
@@ -77,42 +84,42 @@
                                                 <button class="btn btn-warning"><i class="fas fa-wrench"></i></button>
                                             </a>
                                             <a href="<?= BASE_ADMIN_URL . '?act=xoa-san-pham&id_san_pham=' . $sanPham['id'] ?>"
-                                                onclick="return confirm('bạn có đồng ý xóa không')">
+                                                onclick="return confirm('Bạn có đồng ý xóa sản phẩm không?')">
                                                 <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
                                             </a>
 
                                         </td>
-                                        </div>
-                                    </tr>
-                                    <?php endforeach ?>
-                                </tbody>
-                                <tfoot>
-
-                                    <tr>
-                                        <th>STT</th>
-                                        <th>Tên sản phẩm</th>
-                                        <th>Ảnh sản phẩm</th>
-                                        <th>Giá tiền</th>
-                                        <th>Số lượng</th>
-                                        <th>Danh mục</th>
-                                        <th>Trạng thái</th>
-                                        <th>Thao tác</th>
-                                    </tr>
-
-                                </tfoot>
-                            </table>
                         </div>
-                        <!-- /.card-body -->
+                        </tr>
+                        <?php endforeach ?>
+                        </tbody>
+                        <tfoot>
+
+                            <tr>
+                                <th>STT</th>
+                                <th>Tên sản phẩm</th>
+                                <th>Ảnh sản phẩm</th>
+                                <th>Giá tiền</th>
+                                <th>Số lượng</th>
+                                <th>Danh mục</th>
+                                <th>Trạng thái</th>
+                                <th>Thao tác</th>
+                            </tr>
+
+                        </tfoot>
+                        </table>
                     </div>
-                    <!-- /.card -->
+                    <!-- /.card-body -->
                 </div>
-                <!-- /.col -->
+                <!-- /.card -->
             </div>
-            <!-- /.row -->
+            <!-- /.col -->
         </div>
-        <!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
+        <!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+</section>
+<!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
 <!-- footer -->

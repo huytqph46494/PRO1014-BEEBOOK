@@ -1,6 +1,6 @@
 <footer class="main-footer">
     <div class="float-right d-none d-sm-block">
-        <b>BeeBook</b>
+        <b>Created by group 2</b>
     </div>
     <strong>Website bán sách BeeBook</strong>
 </footer>

@@ -290,7 +290,7 @@ class AdminSanPhamController {
             // Xử lý xóa ảnh
             foreach ($listAnhSanPhamCurrent as $img) {
                 if (in_array($img['id'], $img_delete)) {
-                    $this->modelSanPham->deleteAnhSanPham($img['id']);
+                    $this->modelSanPham->destroyAnhSanPham($img['id']);
                     if (!empty($img['link_hinh_anh'])) {
                         deleteFile($img['link_hinh_anh']);
                     }

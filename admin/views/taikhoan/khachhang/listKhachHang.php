@@ -29,7 +29,7 @@
 
                     <div class="card">
                         <div class="card-header">
-                           
+
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -48,33 +48,36 @@
                                 <tbody>
                                     <?php foreach($listKhachHang as $key=> $khachHang): ?>
                                     <tr>
-                                        <td><?= $key+1?></td>                                      
+                                        <td><?= $key+1?></td>
                                         <td><?=$khachHang['ho_ten']?></td>
                                         <td>
                                             <img src="<?= BASE_URL . $khachHang['anh_dai_dien']?>" style="width: 100px"
-                                                alt=""
-                                                >
-                                                
+                                                alt="">
+
 
                                         </td>
                                         <td><?=$khachHang['email']?></td>
                                         <td><?=$khachHang['so_dien_thoai']?></td>
-                                        <td><?=$khachHang['trang_thai'] == 1? 'Active' : 'Inactive'?></td>
+                                        <td><?=$khachHang['trang_thai'] == 1? 'Hoạt động' : 'Ngừng hoạt động'?></td>
 
                                         <td>
                                             <div class="btn-group">
-                                           <a href="<?= BASE_ADMIN_URL . '?act=chi-tiet-khach-hang&id_khach_hang=' . $khachHang['id'] ?>">
-                                                <button class="btn btn-primary"><i class="fas fa-eye"></i></button>
-                                           </a>
+                                                <a
+                                                    href="<?= BASE_ADMIN_URL . '?act=chi-tiet-khach-hang&id_khach_hang=' . $khachHang['id'] ?>">
+                                                    <button class="btn btn-primary"><i class="fas fa-eye"></i></button>
+                                                </a>
 
-                                           <a href="<?= BASE_ADMIN_URL . '?act=form-sua-khach-hang&id_khach_hang=' . $khachHang['id'] ?>">
-                                                <button class="btn btn-warning"><i class="fas fa-wrench"></i></button>
-                                          </a>
+                                                <a
+                                                    href="<?= BASE_ADMIN_URL . '?act=form-sua-khach-hang&id_khach_hang=' . $khachHang['id'] ?>">
+                                                    <button class="btn btn-warning"><i
+                                                            class="fas fa-wrench"></i></button>
+                                                </a>
 
-                                          <a href="<?= BASE_ADMIN_URL . '?act=reset-password&id_quan_tri=' . $khachHang['id'] ?>"
-                                             onclick="return confirm('Bạn có muốn reset password của tài khoản này không?')">
-                                                 <button class="btn btn-danger"><i class="fas fa-circle-notch"></i></button>
-                                          </a>
+                                                <a href="<?= BASE_ADMIN_URL . '?act=reset-password&id_quan_tri=' . $khachHang['id'] ?>"
+                                                    onclick="return confirm('Bạn có muốn reset password của tài khoản này không?')">
+                                                    <button class="btn btn-danger"><i
+                                                            class="fas fa-circle-notch"></i></button>
+                                                </a>
 
                                             </div>
                                         </td>

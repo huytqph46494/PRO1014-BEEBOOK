@@ -18,8 +18,8 @@
                 </div>
                 <div class="col-sm-1">
                     <a href="<?= BASE_ADMIN_URL . '?act=san-pham'?>" class="btn btn-secondary">Quay lại</a>
-            </div>
-        </div><!-- /.container-fluid -->
+                </div>
+            </div><!-- /.container-fluid -->
     </section>
 
     <!-- Main content -->
@@ -54,13 +54,15 @@
                             <div class="form-group">
                                 <label for="gia_san_pham">Giá sản phẩm</label>
                                 <input type="number" id="gia_san_pham" name="gia_san_pham" class="form-control"
-                                    value="<?=$sanPham['gia_san_pham']?>" placeholder="Nhập giá sản phẩm">
+                                    value="<?= number_format($sanPham['gia_san_pham'], 0, '', '') ?>"
+                                    placeholder="Nhập giá sản phẩm">
                             </div>
 
                             <div class="form-group">
                                 <label for="gia_khuyen_mai">Giá khuyến mãi</label>
                                 <input type="number" id="gia_khuyen_mai" name="gia_khuyen_mai" class="form-control"
-                                    value="<?=$sanPham['gia_khuyen_mai']?>" placeholder="Nhập giá khuyến mãi sản phẩm">
+                                    value="<?= number_format($sanPham['gia_khuyen_mai'], 0, '', '') ?>"
+                                    placeholder="Nhập giá khuyến mãi sản phẩm">
                             </div>
 
                             <div class="form-group">
@@ -169,7 +171,7 @@
 
                         <!-- ✅ Nút submit mới đúng -->
                         <div class="card-footer text-center">
-                            <button type="submit" class="btn btn-primary">Sửa thông tin</button>
+                            <button type="submit" class="btn btn-primary">Sửa album</button>
                         </div>
                     </form>
                 </div>
