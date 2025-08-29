@@ -1,5 +1,4 @@
     <?php require_once 'layout/header.php'; ?>
-
     <?php require_once 'layout/menu.php'; ?>
 
 
@@ -12,7 +11,8 @@
                         <div class="breadcrumb-wrap">
                             <nav aria-label="breadcrumb">
                                 <ul class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i></a></li>
+                                    <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i></a>
+                                    </li>
                                     <li class="breadcrumb-item"><a href="shop.html">shop</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">bill detail</li>
                                 </ul>
@@ -49,15 +49,16 @@
                                             <th>Thành tiền</th>
                                         </tr>
                                         <?php foreach ($chiTietDonHang as $item): ?>
-                                            <tr>
-                                                <td>
-                                                    <img class="img-fluid" src="<?= BASE_URL . $item['hinh_anh']?>" alt="Product" width="100px"/>
-                                                </td>
-                                                <td><?= $item['ten_san_pham'] ?></td>
-                                                <td><?= number_format($item['don_gia'],0,',', '.' )?> đ</td>
-                                                <td><?= $item['so_luong'] ?></td>
-                                                <td><?= number_format($item['thanh_tien'],0,',', '.' )?> đ</td>
-                                            </tr>
+                                        <tr>
+                                            <td>
+                                                <img class="img-fluid" src="<?= BASE_URL . $item['hinh_anh']?>"
+                                                    alt="Product" width="100px" />
+                                            </td>
+                                            <td><?= $item['ten_san_pham'] ?></td>
+                                            <td><?= number_format($item['don_gia'],0,',', '.' )?> đ</td>
+                                            <td><?= $item['so_luong'] ?></td>
+                                            <td><?= number_format($item['thanh_tien'],0,',', '.' )?> đ</td>
+                                        </tr>
                                         <?php endforeach; ?>
                                     </tbody>
                                 </table>
@@ -113,7 +114,8 @@
 
                                         <tr>
                                             <th>Phương thức thanh toán</th>
-                                            <td><?= $phuongThucThanhToan[$donHang['phuong_thuc_thanh_toan_id']] ?></td>
+                                            <td><?= $phuongThucThanhToan[$donHang['phuong_thuc_thanh_toan_id']] ?>
+                                            </td>
                                         </tr>
 
                                         <tr>

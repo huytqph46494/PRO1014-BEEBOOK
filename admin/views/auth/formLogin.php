@@ -120,7 +120,7 @@
         <!-- /.login-logo -->
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
-                <a href="./assets/index2.html" class="h1"><b>Bee-Book</b></a>
+                <a href="#" class="h1"><b>Bee-Book</b></a>
             </div>
             <div class="card-body">
                 <p class="login-box-msg">Vui lòng đăng nhập</p>
