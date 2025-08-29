@@ -15,8 +15,9 @@ class HomeController
     }
 
     public function home(){
-        $listSanPham = $this->modelSanPham->getAllSanPham();
-        require_once './views/home.php';
+          $this->loadMiniCartData(); // <== GỌI TRƯỚC KHI GỌI VIEW
+    $listSanPham = $this->modelSanPham->getAllSanPham();
+    require_once './views/home.php';
     }
 
     public function chiTietSanPham() {
@@ -317,4 +318,20 @@ public function addGioHang()
             var_dump('Chưa đăng nhập');die;
         }
     }
+
+     public function loadMiniCartData() {
+    global $chiTietGioHang;
+
+    $chiTietGioHang = []; // mặc định trống
+
+    if (isset($_SESSION['user_client'])) {
+        $user = $this->modelTaiKhoan->getTaiKhoanFromEmail($_SESSION['user_client']['email']);
+        $gioHang = $this->modelGioHang->getGioHangFromUser($user['id']);
+
+        if ($gioHang) {
+            $chiTietGioHang = $this->modelGioHang->getDetailGioHang($gioHang['id']);
+        }
+    }
+}
+
 }

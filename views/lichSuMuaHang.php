@@ -2,6 +2,7 @@
 
     <?php require_once 'layout/menu.php'; ?>
 
+    <?php require_once './commons/global.php'; ?>
 
     <main>
         <!-- breadcrumb area start -->
@@ -47,12 +48,13 @@
                                         <?php foreach($donHangs as $donHangs):?>
                                         <tr>
                                             <th class="text-center"><?= $donHangs['ma_don_hang']?></th>
-                                            <td><?= $donHangs['ngay_dat']?></td>
+                                            <td><?= date('d/m/Y', strtotime($donHangs['ngay_dat'])) ?></td>
                                             <td><?= formatPrice($donHangs['tong_tien'])?> đ</td>
                                             <td><?= $phuongThucThanhToan[$donHangs['phuong_thuc_thanh_toan_id']]?></td>
                                             <td><?= $trangThaiDonHang[$donHangs['trang_thai_id']]?></td>
                                             <td>
-                                                <a href="<?= BASE_URL ?>?act=chi-tiet-mua-hang&id=<?= $donHangs['id'] ?>"class="btn btn-sqr"> 
+                                                <a href="<?= BASE_URL ?>?act=chi-tiet-mua-hang&id=<?= $donHangs['id'] ?>"
+                                                    class="btn btn-sqr">
                                                     Chi tiết đơn hàng
                                                 </a>
                                                 <?php if($donHangs['trang_thai_id'] == 1):?>

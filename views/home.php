@@ -1,6 +1,7 @@
 <?php require_once 'layout/header.php'; ?>
 <?php require_once 'layout/menu.php'; ?>
 
+
 <main>
     <!-- hero slider area start -->
     <section class="slider-area">

@@ -38,8 +38,9 @@
                                         <div class="cart-update-option">
                                             <div class="apply-coupon-wrapper">
                                                 <form action="#" method="post" class=" d-block d-md-flex">
-                                                    <input type="text" placeholder="Enter Your Coupon Code" required />
-                                                    <button class="btn btn-sqr">Apply Coupon</button>
+                                                    <input type="text" placeholder="Nhập mã phiếu giảm giá của bạn..."
+                                                        required />
+                                                    <button class="btn btn-sqr">Áp dụng</button>
                                                 </form>
                                             </div>
                                         </div>
@@ -208,6 +209,7 @@
         </div>
         <!-- checkout main wrapper end -->
     </main>
+
 
     <?php require_once 'layout/miniCart.php'; ?>
 
