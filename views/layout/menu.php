@@ -29,7 +29,7 @@
 
                                     </li>
 
-                                    <li><a href="#">Sản Phẩm</a>
+                                    <li><a href="<?= BASE_URL . '?act=danh-sach-san-pham' ?>">Sản Phẩm</a>
                                     </li>
                                     <li><a href="#">Giới thiệu</a></li>
                                     <li><a href="#">Liên hệ</a></li>

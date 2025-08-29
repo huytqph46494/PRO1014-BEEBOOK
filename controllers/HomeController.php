@@ -7,11 +7,13 @@ class HomeController
     public $modelGioHang;
     public $modelDonHang;
 
+
     public function __construct() {
         $this->modelSanPham = new SanPham();
         $this->modelTaiKhoan = new TaiKhoan();
         $this->modelGioHang = new GioHang();
         $this->modelDonHang = new DonHang();
+
     }
 
     public function home(){
@@ -334,4 +336,45 @@ public function addGioHang()
     }
 }
 
+public function danhSachSanPham() {
+        // Lấy danh sách danh mục
+        $listDanhMuc = $this->modelSanPham->getAllDanhMuc();
+ 
+        // Lấy trang hiện tại
+        $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+        $limit = 8;
+        $offset = ($page - 1) * $limit;
+
+        // Lọc danh mục
+        $danh_muc_id = isset($_GET['danh_muc_id']) ? (int)$_GET['danh_muc_id'] : null;
+
+        // Lọc giá
+        $priceFilter = isset($_GET['price']) ? $_GET['price'] : null;
+        $minPrice = null;
+        $maxPrice = null;
+        if ($priceFilter) {
+            list($minPrice, $maxPrice) = explode('-', $priceFilter);
+            $minPrice = (int)$minPrice;
+            $maxPrice = (int)$maxPrice;
+        }
+
+        // Lấy sản phẩm theo filter & phân trang
+        if ($danh_muc_id && $minPrice !== null) {
+            $listSanPham = $this->modelSanPham->getSanPhamByDanhMucVaGia($danh_muc_id, $minPrice, $maxPrice, $limit, $offset);
+            $tongSanPham = $this->modelSanPham->countSanPhamByDanhMucVaGia($danh_muc_id, $minPrice, $maxPrice);
+        } elseif ($danh_muc_id) {
+            $listSanPham = $this->modelSanPham->getSanPhamByDanhMucPhanTrang($danh_muc_id, $limit, $offset);
+            $tongSanPham = $this->modelSanPham->countSanPhamByDanhMuc($danh_muc_id);
+        } elseif ($minPrice !== null) {
+            $listSanPham = $this->modelSanPham->getSanPhamByGia($minPrice, $maxPrice, $limit, $offset);
+            $tongSanPham = $this->modelSanPham->countSanPhamByGia($minPrice, $maxPrice);
+        } else {
+            $listSanPham = $this->modelSanPham->getSanPhamPhanTrang($limit, $offset);
+            $tongSanPham = $this->modelSanPham->countAllSanPham();
+        }
+
+        $tongTrang = ceil($tongSanPham / $limit);
+
+        require_once './views/danhSachSanPham.php';
+    }
 }

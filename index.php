@@ -41,7 +41,8 @@ match ($act) {
     'chi-tiet-mua-hang' => (new HomeController())->chiTietMuaHang(),
 
     'huy-don-hang' => (new HomeController())->huyDonHang(),
-
+    
+ 
     //auth    
     'login' => (new HomeController())->formLogin(), // Đăng nhập
 

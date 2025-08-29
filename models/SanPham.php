@@ -83,4 +83,156 @@ class SanPham {
             echo "Lỗi" . $e->getMessage();
         }
     }
+
+    public function getAllDanhMuc() {
+        try {
+            $sql = 'SELECT * FROM danh_mucs';
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll();
+        } catch (Exception $e) {
+            echo "Lỗi: " . $e->getMessage();
+        }
+    }
+
+    // 1. Phân trang toàn bộ sản phẩm
+public function getSanPhamPhanTrang($limit, $offset) {
+    try {
+        $sql = 'SELECT san_phams.*, danh_mucs.ten_danh_muc
+                FROM san_phams
+                INNER JOIN danh_mucs ON san_phams.danh_muc_id = danh_mucs.id
+                LIMIT :limit OFFSET :offset';
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
+        $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    } catch (Exception $e) {
+        echo "Lỗi: " . $e->getMessage();
+    }
+}
+
+// 2. Đếm tổng sản phẩm
+public function countAllSanPham() {
+    try {
+        $sql = 'SELECT COUNT(*) FROM san_phams';
+        $stmt = $this->conn->query($sql);
+        return $stmt->fetchColumn();
+    } catch (Exception $e) {
+        echo "Lỗi: " . $e->getMessage();
+    }
+}
+
+// 3. Sản phẩm theo danh mục có phân trang
+public function getSanPhamByDanhMucPhanTrang($danh_muc_id, $limit, $offset) {
+    try {
+        $sql = 'SELECT san_phams.*, danh_mucs.ten_danh_muc
+                FROM san_phams
+                INNER JOIN danh_mucs ON san_phams.danh_muc_id = danh_mucs.id
+                WHERE san_phams.danh_muc_id = :danh_muc_id
+                LIMIT :limit OFFSET :offset';
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindValue(':danh_muc_id', $danh_muc_id, PDO::PARAM_INT);
+        $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
+        $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    } catch (Exception $e) {
+        echo "Lỗi: " . $e->getMessage();
+    }
+}
+
+// 4. Đếm sản phẩm theo danh mục
+public function countSanPhamByDanhMuc($danh_muc_id) {
+    try {
+        $sql = 'SELECT COUNT(*) FROM san_phams WHERE danh_muc_id = :danh_muc_id';
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute([':danh_muc_id' => $danh_muc_id]);
+        return $stmt->fetchColumn();
+    } catch (Exception $e) {
+        echo "Lỗi: " . $e->getMessage();
+    }
+}
+
+// 5. Lọc sản phẩm theo giá
+public function getSanPhamByGia($minPrice, $maxPrice, $limit, $offset) {
+    try {
+        $sql = 'SELECT san_phams.*, danh_mucs.ten_danh_muc
+                FROM san_phams
+                INNER JOIN danh_mucs ON san_phams.danh_muc_id = danh_mucs.id
+                WHERE IF(gia_khuyen_mai > 0, gia_khuyen_mai, gia_san_pham) BETWEEN :minPrice AND :maxPrice
+                LIMIT :limit OFFSET :offset';
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindValue(':minPrice', $minPrice, PDO::PARAM_INT);
+        $stmt->bindValue(':maxPrice', $maxPrice, PDO::PARAM_INT);
+        $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
+        $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    } catch (Exception $e) {
+        echo "Lỗi: " . $e->getMessage();
+    }
+}
+
+
+// 6. Đếm sản phẩm theo khoảng giá
+public function countSanPhamByGia($minPrice, $maxPrice) {
+    try {
+        $sql = 'SELECT COUNT(*) FROM san_phams 
+                WHERE IF(gia_khuyen_mai > 0, gia_khuyen_mai, gia_san_pham) BETWEEN :minPrice AND :maxPrice';
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute([
+            ':minPrice' => $minPrice,
+            ':maxPrice' => $maxPrice
+        ]);
+        return $stmt->fetchColumn();
+    } catch (Exception $e) {
+        echo "Lỗi: " . $e->getMessage();
+    }
+}
+
+
+// 7. Lọc theo danh mục + giá
+public function getSanPhamByDanhMucVaGia($danh_muc_id, $minPrice, $maxPrice, $limit, $offset) {
+    try {
+        $sql = 'SELECT san_phams.*, danh_mucs.ten_danh_muc
+                FROM san_phams
+                INNER JOIN danh_mucs ON san_phams.danh_muc_id = danh_mucs.id
+                WHERE san_phams.danh_muc_id = :danh_muc_id 
+                AND IF(gia_khuyen_mai > 0, gia_khuyen_mai, gia_san_pham) BETWEEN :minPrice AND :maxPrice
+                LIMIT :limit OFFSET :offset';
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindValue(':danh_muc_id', $danh_muc_id, PDO::PARAM_INT);
+        $stmt->bindValue(':minPrice', $minPrice, PDO::PARAM_INT);
+        $stmt->bindValue(':maxPrice', $maxPrice, PDO::PARAM_INT);
+        $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
+        $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    } catch (Exception $e) {
+        echo "Lỗi: " . $e->getMessage();
+    }
+}
+
+
+// 8. Đếm theo danh mục + giá
+public function countSanPhamByDanhMucVaGia($danh_muc_id, $minPrice, $maxPrice) {
+    try {
+        $sql = 'SELECT COUNT(*) FROM san_phams 
+                WHERE danh_muc_id = :danh_muc_id 
+                AND IF(gia_khuyen_mai > 0, gia_khuyen_mai, gia_san_pham) BETWEEN :minPrice AND :maxPrice';
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute([
+            ':danh_muc_id' => $danh_muc_id,
+            ':minPrice' => $minPrice,
+            ':maxPrice' => $maxPrice
+        ]);
+        return $stmt->fetchColumn();
+    } catch (Exception $e) {
+        echo "Lỗi: " . $e->getMessage();
+    }
+}
+
+
+
 }
