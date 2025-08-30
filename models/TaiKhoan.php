@@ -48,5 +48,24 @@ class TaiKhoan{
             return false;
         }
     }
+
+public function addTaiKhoan($ho_ten, $email, $mat_khau) {
+    try {
+        $sql = 'INSERT INTO tai_khoans (ho_ten, email, mat_khau, chuc_vu_id, trang_thai) VALUES (:ho_ten, :email, :mat_khau, :chuc_vu_id, :trang_thai)';
+        $stmt = $this->conn->prepare($sql);
+        $hashed_password = password_hash($mat_khau, PASSWORD_DEFAULT);
+        $stmt->execute([
+            ':ho_ten' => $ho_ten,
+            ':email' => $email,
+            ':mat_khau' => $hashed_password,
+            ':chuc_vu_id' => 2,
+            ':trang_thai' => 1
+        ]);
+        return true;
+    } catch (Exception $e) {
+        error_log("Lỗi thêm tài khoản: " . $e->getMessage(), 3, PATH_ROOT . '/logs/error.log');
+        return false;
+    }
+}
     
 }

@@ -2,7 +2,6 @@
 
     <?php require_once 'layout/menu.php'; ?>
 
-    <?php require_once './commons/global.php'; ?>
 
     <main>
         <!-- breadcrumb area start -->

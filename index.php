@@ -48,5 +48,11 @@ match ($act) {
 
     'check_login' => (new HomeController())->postLogin(), // Xử lý đăng nhập
 
+    'logout' => (new HomeController())->logout(), // Đăng xuất
+
+    'register' => (new HomeController())->formRegister(), // Đăng ký
+
+   'check_register' => (new HomeController())->postRegister(), // Xử lý đăng ký
+
     default => require './views/404.php'
 };

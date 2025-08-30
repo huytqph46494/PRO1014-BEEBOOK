@@ -377,4 +377,60 @@ public function danhSachSanPham() {
 
         require_once './views/danhSachSanPham.php';
     }
+
+     public function logout() {
+        if (isset($_SESSION['user_client'])) {
+            session_unset();
+            session_destroy();
+        }
+        header("Location: " . BASE_URL);
+        exit();
+    }
+
+public function postRegister() {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $ho_ten = $_POST['ho_ten'];
+        $email = $_POST['email'];
+        $mat_khau = $_POST['mat_khau'];
+        $confirm_mat_khau = $_POST['confirm_mat_khau'];
+
+        if (empty($ho_ten) || empty($email) || empty($mat_khau)) {
+            $_SESSION['error'] = "Vui lòng điền đầy đủ thông tin!";
+            $_SESSION['flash'] = true;
+            header("Location: " . BASE_URL . '?act=register');
+            exit();
+        }
+        if ($mat_khau !== $confirm_mat_khau) {
+            $_SESSION['error'] = "Mật khẩu xác nhận không khớp!";
+            $_SESSION['flash'] = true;
+            header("Location: " . BASE_URL . '?act=register');
+            exit();
+        }
+
+        $existingUser = $this->modelTaiKhoan->getTaiKhoanFromEmail($email);
+        if ($existingUser) {
+            $_SESSION['error'] = "Email đã được sử dụng!";
+            $_SESSION['flash'] = true;
+            header("Location: " . BASE_URL . '?act=register');
+            exit();
+        }
+
+        $result = $this->modelTaiKhoan->addTaiKhoan($ho_ten, $email, $mat_khau);
+        if ($result) {
+            $_SESSION['success'] = "Đăng ký thành công! Vui lòng đăng nhập.";
+            header("Location: " . BASE_URL . '?act=login');
+            exit();
+        } else {
+            $_SESSION['error'] = "Đăng ký thất bại, vui lòng thử lại!";
+            $_SESSION['flash'] = true;
+            header("Location: " . BASE_URL . '?act=register');
+            exit();
+        }
+    }
+}
+    public function formRegister() {
+        require_once './views/auth/formRegister.php';
+        deleteSessionError();
+    }
+
 }

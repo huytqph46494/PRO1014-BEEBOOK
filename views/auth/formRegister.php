@@ -11,8 +11,8 @@
                     <div class="breadcrumb-wrap">
                         <nav aria-label="breadcrumb">
                             <ul class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i></a></li>
-                                <li class="breadcrumb-item active" aria-current="page">login</li>
+                                <li class="breadcrumb-item"><a href="<?= BASE_URL ?>"><i class="fa fa-home"></i></a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Đăng ký</li>
                             </ul>
                         </nav>
                     </div>
@@ -27,43 +27,49 @@
         <div class="container" style="max-width: 40vw;">
             <div class="member-area-from-wrap">
                 <div class="row">
-                    <!-- Login Content Start -->
+                    <!-- Register Content Start -->
                     <div class="col-lg-12">
-                        <div class="login-reg-form-wrap">
-                            <h5 class="text-center">ĐĂNG NHẬP</h5>
-                            <br>
-                            <p class="login-box-msg text-center">Vui lòng đăng nhập</p>
-
-                            <?php if (isset($_SESSION['error'])): ?>
-                            <?php if (is_array($_SESSION['error'])): ?>
-                            <?php foreach ($_SESSION['error'] as $err): ?>
-                            <p class="text-danger login-box-msg text-center"><?= $err ?></p>
-                            <?php endforeach; ?>
-                            <?php else: ?>
-                            <p class="text-danger login-box-msg text-center"><?= $_SESSION['error'] ?></p>
+                        <div class="login-reg-form-wrap sign-up-form">
+                            <h5>Đăng ký tài khoản</h5>
+                            <?php if (isset($_SESSION['error']) && $_SESSION['flash']) : ?>
+                                <div class="alert alert-danger">
+                                    <?php echo $_SESSION['error']; ?>
+                                </div>
                             <?php endif; ?>
-                            <?php unset($_SESSION['error']); // hiển thị xong thì xóa để reload không hiện lại ?>
+                            <?php if (isset($_SESSION['success']) && $_SESSION['flash']) : ?>
+                                <div class="alert alert-success">
+                                    <?php echo $_SESSION['success']; ?>
+                                </div>
                             <?php endif; ?>
-
-                            <form action="<?= BASE_URL . '?act=check_login' ?>" method="post">
+                            <form action="<?= BASE_URL . '?act=check_register' ?>" method="post">
                                 <div class="single-input-item">
-                                    <input type="email" placeholder="Email or Username" name="email" required />
+                                    <input type="text" name="ho_ten" placeholder="Họ và tên" required />
                                 </div>
                                 <div class="single-input-item">
-                                    <input type="password" placeholder="Enter your Password" name="password" required />
+                                    <input type="email" name="email" placeholder="Nhập email của bạn" required />
                                 </div>
-                                <div class="single-input-item">
-                                    <div class="login-reg-form-meta d-flex align-items-center justify-content-between">
-                                        <a href="#" class="forget-pwd">Quên mật khẩu?</a>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="single-input-item">
+                                            <input type="password" name="mat_khau" placeholder="Nhập mật khẩu" required />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="single-input-item">
+                                            <input type="password" name="confirm_mat_khau" placeholder="Xác nhận mật khẩu" required />
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="single-input-item">
-                                    <button class="btn btn-sqr">Đăng nhập</button>
+                                    <button class="btn btn-sqr">Đăng ký</button>
+                                </div>
+                                <div class="single-input-item">
+                                    <p>Đã có tài khoản? <a href="<?= BASE_URL . '?act=login' ?>">Đăng nhập</a></p>
                                 </div>
                             </form>
                         </div>
                     </div>
-                    <!-- Login Content End -->
+                    <!-- Register Content End -->
                 </div>
             </div>
         </div>
@@ -84,13 +90,13 @@
                     <ul>
                         <li class="minicart-item">
                             <div class="minicart-thumb">
-                                <a href="product-details.html">
+                                <a href="<?= BASE_URL . '?act=chi-tiet-san-pham' ?>">
                                     <img src="assets/img/cart/cart-1.jpg" alt="product">
                                 </a>
                             </div>
                             <div class="minicart-content">
                                 <h3 class="product-name">
-                                    <a href="product-details.html">Dozen White Botanical Linen Dinner Napkins</a>
+                                    <a href="<?= BASE_URL . '?act=chi-tiet-san-pham' ?>">Dozen White Botanical Linen Dinner Napkins</a>
                                 </h3>
                                 <p>
                                     <span class="cart-quantity">1 <strong>&times;</strong></span>
@@ -101,13 +107,13 @@
                         </li>
                         <li class="minicart-item">
                             <div class="minicart-thumb">
-                                <a href="product-details.html">
+                                <a href="<?= BASE_URL . '?act=chi-tiet-san-pham' ?>">
                                     <img src="assets/img/cart/cart-2.jpg" alt="product">
                                 </a>
                             </div>
                             <div class="minicart-content">
                                 <h3 class="product-name">
-                                    <a href="product-details.html">Dozen White Botanical Linen Dinner Napkins</a>
+                                    <a href="<?= BASE_URL . '?act=chi-tiet-san-pham' ?>">Dozen White Botanical Linen Dinner Napkins</a>
                                 </h3>
                                 <p>
                                     <span class="cart-quantity">1 <strong>&times;</strong></span>
@@ -141,8 +147,8 @@
                 </div>
 
                 <div class="minicart-button">
-                    <a href="cart.html"><i class="fa fa-shopping-cart"></i> View Cart</a>
-                    <a href="cart.html"><i class="fa fa-share"></i> Checkout</a>
+                    <a href="<?= BASE_URL . '?act=gio-hang' ?>"><i class="fa fa-shopping-cart"></i> Xem giỏ hàng</a>
+                    <a href="<?= BASE_URL . '?act=thanh-toan' ?>"><i class="fa fa-share"></i> Thanh toán</a>
                 </div>
             </div>
         </div>
