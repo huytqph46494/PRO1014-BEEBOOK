@@ -108,6 +108,7 @@ public function addGioHang()
                 // var_dump('Thêm giỏ hàng thành công');die;
                 header("Location: " . BASE_URL . '?act=gio-hang');
             } else {
+                header("Location: " . BASE_URL . '?act=login');
                 // var_dump('Chưa đăng nhập');
                 // die;
 
