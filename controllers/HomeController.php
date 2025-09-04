@@ -144,6 +144,35 @@ public function addGioHang()
                 header("Location: " . BASE_URL . '?act=login');
             }
     }
+
+       public function themBinhLuan() {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if (isset($_SESSION['user_client'])) {
+                $san_pham_id = $_POST['san_pham_id'];
+                $noi_dung = $_POST['noi_dung'];
+                $user = $this->modelTaiKhoan->getTaiKhoanFromEmail($_SESSION['user_client']['email']);
+                $tai_khoan_id = $user['id'];
+                $ngay_dang = date('Y-m-d H:i:s');
+
+                if (!empty($noi_dung)) {
+                    $result = $this->modelSanPham->addBinhLuan($san_pham_id, $tai_khoan_id, $noi_dung, $ngay_dang);
+                    if ($result) {
+                        $_SESSION['success'] = "Bình luận thành công!";
+                    } else {
+                        $_SESSION['error'] = "Bình luận thất bại, vui lòng thử lại!";
+                    }
+                } else {
+                    $_SESSION['error'] = "Nội dung bình luận không được để trống!";
+                }
+                header("Location: " . BASE_URL . "?act=chi-tiet-san-pham&id_san_pham=" . $san_pham_id);
+                exit();
+            } else {
+                $_SESSION['error'] = "Vui lòng đăng nhập để bình luận!";
+                header("Location: " . BASE_URL . '?act=login');
+                exit();
+            }
+        }
+    }
     
     public function thanhToan(){
             if (isset($_SESSION['user_client'])) {
@@ -432,5 +461,7 @@ public function postRegister() {
         require_once './views/auth/formRegister.php';
         deleteSessionError();
     }
+
+    
 
 }

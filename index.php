@@ -23,6 +23,8 @@ match ($act) {
     'trangchu' => (new HomeController())->trangChu(), // Trang chủ
 
     'danh-sach-san-pham' => (new HomeController())->danhSachSanPham(), // Danh sách sản phẩm
+
+    'tim-kiem-san-pham' => (new HomeController())->timKiemSanPham(), // Tìm kiếm sản phẩm (mới thêm)
     
     'sua_san_pham' => (new HomeController())->suaSanPham(), // Thêm xử lý sửa
 
@@ -31,6 +33,8 @@ match ($act) {
     'them-gio-hang' =>(new HomeController())->addGioHang(),
 
     'gio-hang' =>(new HomeController())->gioHang(),
+
+     'them-binh-luan' =>(new HomeController())->themBinhLuan(),
 
     'thanh-toan' => (new HomeController())->thanhToan(),
 

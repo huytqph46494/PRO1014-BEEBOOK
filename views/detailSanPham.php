@@ -104,7 +104,7 @@
                     <!-- product details inner end -->
 
                     <!-- product details reviews start -->
-                    <div class="product-details-reviews section-padding pb-0">
+                     <div class="product-details-reviews section-padding pb-0">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="product-review-info">
@@ -116,33 +116,37 @@
                                     </ul>
                                     <div class="tab-content reviews-tab">
                                         <div class="tab-pane fade show active" id="tab_three">
-                                            <?php foreach($listBinhLuan as $binhLuan): ?>
+                                            <?php foreach ($listBinhLuan as $binhLuan): ?>
                                             <div class="total-reviews">
                                                 <div class="rev-avatar">
-                                                    <img src="<?= $binhLuan['anh_dai_dien']?>" alt="">
+                                                    <img src="<?= $binhLuan['anh_dai_dien'] ?>" alt="">
                                                 </div>
                                                 <div class="review-box">
                                                     <div class="post-author">
-                                                        <p><span><?= $binhLuan['ho_ten']?> -
-                                                            </span><?= $binhLuan['ngay_dang']?>
+                                                        <p><span><?= $binhLuan['ho_ten'] ?> - </span><?= $binhLuan['ngay_dang'] ?>
                                                         </p>
                                                     </div>
-                                                    <p><?= $binhLuan['noi_dung']?></p>
+                                                    <p><?= $binhLuan['noi_dung'] ?></p>
                                                 </div>
                                             </div>
                                             <?php endforeach; ?>
-                                            <form action="#" class="review-form">
+                                            <?php if (isset($_SESSION['user_client'])): ?>
+                                            <form action="<?= BASE_URL . '?act=them-binh-luan' ?>" method="post" class="review-form">
+                                                <input type="hidden" name="san_pham_id" value="<?= $sanPham['id'] ?>">
                                                 <div class="form-group row">
                                                     <div class="col">
                                                         <label class="col-form-label"><span class="text-danger">*</span>
                                                             Nội dung bình luận</label>
-                                                        <textarea class="form-control" required></textarea>
+                                                        <textarea class="form-control" name="noi_dung" required></textarea>
                                                     </div>
                                                 </div>
                                                 <div class="buttons">
                                                     <button class="btn btn-sqr" type="submit">Bình luận</button>
                                                 </div>
                                             </form> <!-- end of review-form -->
+                                            <?php else: ?>
+                                            <p>Vui lòng <a href="<?= BASE_URL . '?act=login' ?>">đăng nhập</a> để bình luận.</p>
+                                            <?php endif; ?>
                                         </div>
                                     </div>
                                 </div>

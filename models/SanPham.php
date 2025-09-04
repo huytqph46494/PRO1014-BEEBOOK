@@ -233,6 +233,40 @@ public function countSanPhamByDanhMucVaGia($danh_muc_id, $minPrice, $maxPrice) {
     }
 }
 
+// public function getBinhLuanBySanPham($san_pham_id) {
+//     try {
+//         $sql = "SELECT b.noi_dung, b.ngay_tao, t.ho_ten
+//                 FROM binh_luans b
+//                 JOIN tai_khoans t ON b.tai_khoan_id = t.id
+//                 WHERE b.san_pham_id = :san_pham_id
+//                 ORDER BY b.id DESC";
+//         $stmt = $this->conn->prepare($sql);
+//         $stmt->execute([':san_pham_id' => $san_pham_id]);
+//         return $stmt->fetchAll(PDO::FETCH_ASSOC);
+//     } catch (Exception $e) {
+//         echo "Lỗi: " . $e->getMessage();
+//     }
+// }
+
+
+public function addBinhLuan($san_pham_id, $tai_khoan_id, $noi_dung, $ngay_dang) {
+    try {
+        $sql = "INSERT INTO binh_luans (san_pham_id, tai_khoan_id, noi_dung, ngay_dang) 
+                VALUES (:san_pham_id, :tai_khoan_id, :noi_dung, :ngay_dang)";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam(':san_pham_id', $san_pham_id);
+        $stmt->bindParam(':tai_khoan_id', $tai_khoan_id);
+        $stmt->bindParam(':noi_dung', $noi_dung);
+        $stmt->bindParam(':ngay_dang', $ngay_dang);
+        return $stmt->execute();
+    } catch (PDOException $e) {
+        return false;
+    }
+}
+
+
+
+
 
 
 }
