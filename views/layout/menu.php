@@ -48,7 +48,7 @@
                         <div class="header-search-container">
                             <button class="search-trigger d-xl-none d-lg-block"><i class="pe-7s-search"></i></button>
                             <form class="header-search-box d-lg-none d-xl-block">
-                                <input type="text" placeholder="Nhập tên sản phẩm" class="header-search-field">
+                                <input type="text" placeholder="Nhập tên sản phẩm..." class="header-search-field">
                                 <button class="header-search-btn"><i class="pe-7s-search"></i></button>
                             </form>
                         </div>
@@ -59,6 +59,11 @@
                                     echo 'Xin chào, ' . $_SESSION['user_client'] ['ho_ten'];
                                   }?>
                                 </label>
+                                <li>
+                                    <a href="#" class="minicart-btn">
+                                        <i class="pe-7s-shopbag"></i>
+                                    </a>
+                                </li>
                                 <li class="user-hover">
                                     <a href="#">
                                         <i class="pe-7s-user"></i>
@@ -66,20 +71,19 @@
                                     <ul class="dropdown-list">
                                         <?php if (!isset($_SESSION['user_client'])) { ?>
                                         <li><a href="<?= BASE_URL . '?act=login' ?>">Đăng nhập</a></li>
-                                            <li><a href="<?= BASE_URL . '?act=register' ?>">Đăng ký</a></li>
+                                        <li><a href="<?= BASE_URL . '?act=register' ?>">Đăng ký</a></li>
                                         <?php } else { ?>
                                         <li><a href="#">Tài khoản</a></li>
-                                        <li><a href="<?= BASE_URL . '?act=logout' ?>">Đăng xuất</a></li>
                                         <li><a href="<?= BASE_URL . '?act=lich-su-mua-hang' ?>">Đơn hàng</a></li>
                                         <?php } ?>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#" class="minicart-btn">
-                                        <i class="pe-7s-shopbag"></i>
-                                        <div class="notification">2</div>
+                                    <a href="<?= BASE_URL . '?act=logout' ?>" class="logout-btn">
+                                        <i class="pe-7s-power"></i>
                                     </a>
                                 </li>
+
                             </ul>
                         </div>
                     </div>
