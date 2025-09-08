@@ -126,7 +126,7 @@
                          <div class="form-group">
                              <label class="col-md-3 control-label">Mật khẩu cũ:</label>
                              <div class="col-md-12">
-                                 <input class="form-control" type="text" name="old_pass" value="">
+                                 <input class="form-control" type="password" name="old_pass" value="">
                                  <?php if(isset($_SESSION['error']['old_pass'])) { ?>
                                  <p class="text-danger"><?=$_SESSION['error']['old_pass'] ?> </p>
                                  <?php } ?>
@@ -135,7 +135,7 @@
                          <div class="form-group">
                              <label class="col-md-3 control-label">Mật khẩu mới:</label>
                              <div class="col-md-12">
-                                 <input class="form-control" type="text" name="new_pass" value="">
+                                 <input class="form-control" type="password" name="new_pass" value="">
                                  <?php if(isset($_SESSION['error']['new_pass'])) { ?>
                                  <p class="text-danger"><?=$_SESSION['error']['new_pass'] ?> </p>
                                  <?php } ?>
@@ -144,7 +144,7 @@
                          <div class="form-group">
                              <label class="col-md-3 control-label">Nhập lại mật khẩu mới:</label>
                              <div class="col-md-12">
-                                 <input class="form-control" type="text" name="confirm_pass" value="">
+                                 <input class="form-control" type="password" name="confirm_pass" value="">
                                  <?php if(isset($_SESSION['error']['confirm_pass'])) { ?>
                                  <p class="text-danger"><?=$_SESSION['error']['confirm_pass'] ?> </p>
                                  <?php } ?>

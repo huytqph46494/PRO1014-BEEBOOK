@@ -78,12 +78,13 @@
                                         <?php } ?>
                                     </ul>
                                 </li>
+                                <?php if (isset($_SESSION['user_client'])) { ?>
                                 <li>
                                     <a href="<?= BASE_URL . '?act=logout' ?>" class="logout-btn">
                                         <i class="pe-7s-power"></i>
                                     </a>
                                 </li>
-
+                                <?php } ?>
                             </ul>
                         </div>
                     </div>
